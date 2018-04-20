@@ -17,4 +17,4 @@ create table  m_user
 );
 
 INSERT INTO m_user (M_UserLogin, M_UserName, M_UserPassword)
-VALUES ('admin', 'admin', 'admin1029384756');
+VALUES ('admin', 'admin', md5('admin'));
