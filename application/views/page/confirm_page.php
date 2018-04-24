@@ -8,5 +8,7 @@
 
     <p>Judul : <?= $title ?></p>
     <p>Content : <?= $content?> </p>
+    <br>
+    <p>Page successfully edited</p>
   </body>
 </html>
