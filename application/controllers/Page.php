@@ -13,8 +13,8 @@ class Page extends CI_Controller {
 
   function editted() {
     $data = array(
-      $this->input->post('title'),
-      $this->input->post('content')
+      'title' => $this->input->post('title'),
+      'content' => $this->input->post('content')
 
     );
 
