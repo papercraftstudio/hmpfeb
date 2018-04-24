@@ -16,11 +16,12 @@
 
     <?php
 
-    echo form_open('page/editted');
+    echo form_open('../page/editted');
 
     //Show page title field
     echo form_label('Judul Halaman : ','title');
     $data = array(
+
       'name' => 'title',
       'placeholder' => 'Judul Halaman',
       'class' => 'title'
@@ -32,6 +33,17 @@
       'name' => 'content'
     );
     echo form_textarea($data);
+
+    //Show submit button
+    $data = array(
+      'type' => 'submit',
+      'name' => 'update',
+      'value' => 'update'
+    );
+    echo form_submit($data);
+
+    //Close form
+    echo form_close();
 
     ?>
   </body>
