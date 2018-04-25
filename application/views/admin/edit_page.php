@@ -16,7 +16,17 @@
 
     <?php
 
-    echo form_open('../page/editted');
+    echo form_open('../admin/editted_page');
+
+    //Show hidden id field
+
+    $data = array(
+
+      'name' => 'id',
+      'hidden' => 'true',
+      'value' => $page->id
+    );
+    echo form_input($data);
 
     //Show page title field
     echo form_label('Judul Halaman : ','title');
@@ -24,15 +34,25 @@
 
       'name' => 'title',
       'placeholder' => 'Judul Halaman',
-      'class' => 'title'
+      'class' => 'title',
+      'value' => $page->title
     );
     echo form_input($data);
 
     //Show page content field
     $data = array(
-      'name' => 'content'
+      'name' => 'content',
+      'value' => $page->content
     );
     echo form_textarea($data);
+
+    //Show preview button
+    $data = array(
+      'type' => 'submit',
+      'name' => 'preview',
+      'value' => 'Preview'
+    );
+    echo form_submit($data);
 
     //Show submit button
     $data = array(
