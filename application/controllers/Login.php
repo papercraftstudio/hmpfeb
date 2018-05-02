@@ -11,7 +11,9 @@ class Login extends CI_Controller
   function index()
   { 
     $data['title'] = "Login";
+    
     $this->load->view('v_login',$data);
+    
   }
 
   function login_action()
