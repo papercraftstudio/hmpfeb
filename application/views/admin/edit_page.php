@@ -16,7 +16,7 @@
 
     <?php
 
-    echo form_open('../admin/editted_page');
+    echo form_open('../PageCon/editted_page');
 
     //Show hidden id field
 

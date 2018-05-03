@@ -11,7 +11,9 @@ class Login extends CI_Controller
   function index()
   { 
     $data['title'] = "Login";
+    
     $this->load->view('v_login',$data);
+    
   }
 
   function login_action()
@@ -31,7 +33,7 @@ class Login extends CI_Controller
         'status' => "login"
         );
       $this->session->set_userdata($data_session);
-      redirect(base_url('admin/admin'));
+      redirect(base_url('admin/'));
     }else{
       echo "Username dan password salah !";
     }

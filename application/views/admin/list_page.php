@@ -19,7 +19,7 @@
         <td><?= $page->id ?></td>
         <td><?= $page->title ?></td>
         <td><?= $page->content ?></td>
-        <td><a href="<?= base_url() ?>admin/page?id=<?= $page->id ?>">Edit</a></td>
+        <td><a href="<?= base_url() ?>PageCon/page?id=<?= $page->id ?>">Edit</a></td>
 
       </tr>
     <?php endforeach ?>

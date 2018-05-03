@@ -75,9 +75,9 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'economics-uksw.org',
-	'username' => 'economi4_admin',
-	'password' => 'admin123',
+	'hostname' => 'localhost',
+	'username' => 'root',
+	'password' => '',
 	'database' => 'economi4_hmp_feb',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
