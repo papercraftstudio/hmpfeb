@@ -20,6 +20,12 @@ class PageCon extends CI_Controller {
     $this->load->view('admin/edit_page',$this->data);
   }
 
+  function delete() { //delete page
+    $id = $this->input->get('id');
+    $this->load->m_page->delete_page($id);
+    $this->load->view('admin/list_page',$this->data);
+  }
+
   function editted_page() {
     $data = array(
 
@@ -29,7 +35,7 @@ class PageCon extends CI_Controller {
     );
 
     $id = $this->input->post('id');
-    
+
     //update to db
     $this->m_page->update($data,$id);
 
