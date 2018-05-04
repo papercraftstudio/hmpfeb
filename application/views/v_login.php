@@ -6,8 +6,11 @@
                 <div class="col-md-4">
                     <div class="card text-center">
                         <h3 class="card-header">Masuk</h3>
-                        <form method="POST" action="<?= base_url('login/login_action'); ?>">
-                            <div class="card-body">
+                        <div class="card-body">
+                            <?php if (isset($error)) { ?>
+                                <div class="alert alert-danger"><?= $error ?></div>
+                            <?php } ?>
+                            <form method="POST" action="<?= base_url('login/login_action'); ?>">
                                 <div class="form-group">
                                     <input type="text" class="form-control" name="username" placeholder="Username">
                                 </div>
@@ -17,8 +20,8 @@
                                 <div class="form-group">
                                     <input class="btn_1" type="submit" value="Masuk">
                                 </div>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-4"></div>
