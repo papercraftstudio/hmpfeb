@@ -19,6 +19,11 @@ class M_Page extends CI_Model {
     return($result);
   }
 
+  function delete_page($id) {
+    $this->db->where('id',$id);
+    $this->db->delete('m_page');
+  }
+
   function get_page($id) {
 
     $this->db->where('id',$id);
