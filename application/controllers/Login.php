@@ -15,22 +15,26 @@ class Login extends CI_Controller {
     function action() {
         $username = $this->input->post('username');
         $password = $this->input->post('pass');
-        $table = 'm_user';
-        $where = array(
-            'M_UserLogin' => $username,
-            'M_UserPassword' => md5($password)
-        );
-        $cek = $this->m_login->cek_login($table, $where)->num_rows();
-        if ($cek > 0) {
-            $data_session = array(
-                'nama' => $username,
-                'status' => "login"
+        if (isset($username) && isset($password)) {
+            $table = 'm_user';
+            $where = array(
+                'M_UserLogin' => $username,
+                'M_UserPassword' => md5($password)
             );
-            $this->session->set_userdata($data_session);
-            redirect(base_url('admin/'));
+            $cek = $this->m_login->cek_login($table, $where)->num_rows();
+            if ($cek > 0) {
+                $data_session = array(
+                    'nama' => $username,
+                    'status' => "login"
+                );
+                $this->session->set_userdata($data_session);
+                redirect(base_url('admin/'));
+            } else {
+                $data["error"] = "Username atau password salah!";
+                $this->load->view('v_login', $data);
+            }
         } else {
-            $data["error"] = "Username atau password salah!";
-            $this->load->view('v_login', $data);
+            redirect(base_url(''));
         }
     }
 
