@@ -10,7 +10,7 @@
                             <?php if (isset($error)) { ?>
                                 <div class="alert alert-danger"><?= $error ?></div>
                             <?php } ?>
-                            <form method="POST" action="<?= base_url('login/login_action'); ?>">
+                            <form method="POST" action="<?= base_url('login/action'); ?>">
                                 <div class="form-group">
                                     <input type="text" class="form-control" name="username" placeholder="Username">
                                 </div>

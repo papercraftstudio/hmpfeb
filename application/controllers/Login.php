@@ -12,7 +12,7 @@ class Login extends CI_Controller {
         $this->load->view('v_login', $data);
     }
 
-    function login_action() {
+    function action() {
         $username = $this->input->post('username');
         $password = $this->input->post('pass');
         $table = 'm_user';
