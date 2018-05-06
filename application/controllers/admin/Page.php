@@ -17,7 +17,15 @@ function pages() {
   $this->load->view('admin/v_admin',$this->data);
 }
 
-function edit_page() {
+function index() {
+
+    $this->data['title'] = "Pages";
+    $this->data['pages'] = $this->m_page->get_all_pages();
+    // $this->load->view('admin/list_page',$this->data);
+    $this->load->view('admin/v_admin',$this->data);
+}
+
+function edit() {
   $id = $this->input->get('id');
   $this->data['page'] = $this->m_page->get_page($id);
   $this->load->view('admin/edit_page',$this->data);

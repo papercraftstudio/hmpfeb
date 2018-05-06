@@ -10,14 +10,14 @@
   <meta name="description" content="">
   <meta name="author" content="Ansonika">
   <title>HMP FEB - Admin dashboard</title>
-	
+
   <!-- Favicons-->
   <link rel="shortcut icon" href="<?= base_url(); ?>assets/modal/admin_section/img/favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" type="image/x-icon" href="img/apple-touch-icon-57x57-precomposed.png">
   <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="img/apple-touch-icon-72x72-precomposed.png">
   <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="img/apple-touch-icon-114x114-precomposed.png">
   <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="img/apple-touch-icon-144x144-precomposed.png">
-	
+
   <!-- Bootstrap core CSS-->
   <link href="<?= base_url(); ?>assets/modal/admin_section/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Icon fonts-->
@@ -28,7 +28,7 @@
   <link href="<?= base_url(); ?>assets/modal/admin_section/css/admin.css" rel="stylesheet">
   <!-- Your custom styles -->
   <link href="<?= base_url(); ?>assets/modal/admin_section/css/admin.css" rel="stylesheet">
-	
+
 </head>
 
 <body class="fixed-nav sticky-footer" id="page-top">
@@ -55,19 +55,19 @@
 		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Bookings">
           <a class="nav-link" href="bookings.html">
             <i class="fa fa-fw fa-calendar-check-o"></i>
-            <span class="nav-link-text">Bookings <span class="badge badge-pill badge-primary">6 New</span></span>
+            <span class="nav-link-text">Berita <span class="badge badge-pill badge-primary">6 New</span></span>
           </a>
         </li>
 		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Reviews">
           <a class="nav-link" href="reviews.html">
             <i class="fa fa-fw fa-star"></i>
-            <span class="nav-link-text">Reviews</span>
+            <span class="nav-link-text">Galery</span>
           </a>
         </li>
 		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Bookmarks">
           <a class="nav-link" href="bookmarks.html">
             <i class="fa fa-fw fa-heart"></i>
-            <span class="nav-link-text">Bookmarks</span>
+            <span class="nav-link-text">Slieshow</span>
           </a>
         </li>
 		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Add listing">
