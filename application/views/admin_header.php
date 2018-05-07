@@ -47,7 +47,7 @@
           </a>
         </li>
 		<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Messages">
-          <a class="nav-link" href="<?= base_url() ?>admin/pages">
+          <a class="nav-link" href="<?= base_url() ?>admin/page">
             <i class="fa fa-fw fa-envelope-open"></i>
             <span class="nav-link-text">Pages</span>
           </a>
