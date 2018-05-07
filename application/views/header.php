@@ -44,8 +44,16 @@
                     <nav id="menu" class="main-menu">
                         <ul>
                             <li><span><a href="">Beranda</a></span></li>
+                            <li><span><a href="">Kajian</a></span></li>
+                            <li><span><a href="">Events</a></span>
+                              <ul>
+                                <li><a href="">List</a></li>
+                              </ul>
+                            </li>
+                            <li><span><a href="">Perkuliahan</a></span></li>
+                            <li><span><a href="">Galery</a></span></li>
                             <li><span><a href="">Tentang</a></span></li>
-                            <li><span><a href="">Galeri</a></span></li>
+
                         </ul>
                     </nav>
                 </div>
