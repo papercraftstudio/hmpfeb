@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="<?= base_url() ?>assets/modal/css/menu.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/modal/css/vendors.css">
     <link rel="stylesheet" href="<?= base_url() ?>assets/modal/css/icon_fonts/css/all_icons_min.css">
+    <link href="<?= base_url() ?>assets/modal/css/blog.css" rel="stylesheet">
 </head>
 <body>
 <div id="preloader" class="Fixed">
@@ -52,7 +53,7 @@
                             </li>
                             <li><span><a href="">Perkuliahan</a></span></li>
                             <li><span><a href="">Galery</a></span></li>
-                            <li><span><a href="">Tentang</a></span></li>
+                            <li><span><a href="<?= base_url() ?>page/about">Tentang</a></span></li>
 
                         </ul>
                     </nav>

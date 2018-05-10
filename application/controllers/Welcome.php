@@ -24,4 +24,10 @@ class Welcome extends CI_Controller {
 		$this->load->view('home');
 		$this->load->view('footer');
 	}
+
+	public function hula() {
+		$this->load->view('header');
+		$this->load->view('home');
+		$this->load->view('footer');
+	}
 }
