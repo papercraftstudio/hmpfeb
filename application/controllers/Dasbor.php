@@ -8,6 +8,8 @@ class Dasbor extends MY_Controller {
         parent::__construct([
             parent::MIDDLEWARE['ADMIN']
         ]);
+        $this->load->model('m_page');
+        $this->load->helper('form');
     }
 
     public function index() {
@@ -25,4 +27,25 @@ class Dasbor extends MY_Controller {
         $vars['user'] = $this->user->selectAll(['role' => 'user']);
         $this->load->view('pengguna-dasbor', $vars);
     }
+
+    public function page() {
+        $data['admin'] = $this->m_page->get_all_pages();
+        
+        $this->load->view('admin-list-page',$data);
+    }
+
+    public function edit_page() {
+        $id = $this->input->get('id');
+        $this->data['admin'] = $this->m_page->get_page($id);
+        $this->load->view('admin-edit-page',$this->data);
+    }
+
+    public function editted_page() {
+        $data = array(
+
+          'title' => $this->input->post('title'),
+          'content' => $this->input->post('content')
+
+        );
+        }
 }
