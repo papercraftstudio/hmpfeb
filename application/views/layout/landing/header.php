@@ -31,6 +31,9 @@
                     <ul>
                         <li><a href="<?php echo base_url() ?>" class="show-submenu"> Beranda</a></li>
                         <li><a href="<?php echo base_url('galeri') ?>"> Galeri</a></li>
+                        <li><a href="<?php echo base_url('galeri') ?>"> Kajian</a></li>
+                        <li><a href="<?php echo base_url('galeri') ?>"> About Us</a></li>
+                        <li><a href="<?php echo base_url('galeri') ?>"> Visi &amp; Misi</a></li>
                     </ul>
                 </div>
             </nav>

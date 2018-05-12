@@ -32,6 +32,12 @@
                     <li><a href="<?php echo base_url('dasbor/pengguna') ?>">Pengguna</a></li>
                 </ul>
             </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+                <a class="nav-link" href="<?php echo base_url('dasbor/page') ?>">
+                    <i class="fa fa-fw fa-dashboard"></i>
+                    <span class="nav-link-text">Page</span>
+                </a>
+            </li>
         </ul>
         <ul class="navbar-nav sidenav-toggler">
             <li class="nav-item">
