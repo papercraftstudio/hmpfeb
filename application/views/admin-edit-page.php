@@ -6,7 +6,19 @@
 
     <script src="<?= base_url() ?>asset/tinymce/jquery.tinymce.min.js"></script>
     <script src="<?= base_url() ?>asset/tinymce/tinymce.min.js"></script>
-    <script>tinymce.init({ selector:'textarea' });</script>
+    <script>
+      tinymce.init(
+        { selector:'textarea',
+          theme : 'modern',
+          plugins: 'print preview searchreplace autolink directionality visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists textcolor wordcount imagetools contextmenu colorpicker textpattern help',
+          content_css: [
+            '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
+            '//www.tinymce.com/css/codepen.min.css'
+          ]
+
+      });
+
+  </script>
 
 <div class="box_general padding_bottom">
   <div class="header_box version_2">
