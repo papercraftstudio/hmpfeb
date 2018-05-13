@@ -85,6 +85,7 @@ class Dasbor extends MY_Controller {
         redirect('dasbor/page');
     }
 
+
     public function editted_event() {
         $data = array(
 
@@ -107,5 +108,18 @@ class Dasbor extends MY_Controller {
          $data['admin'] = $this->m_event->get_all_pages();
         
         $this->load->view('admin-list-event',$data);
+    }
+
+    public function make_admin() {
+        $email=$this->input->post('email');
+        $this->user->make_admin($email);
+        redirect('dasbor/pengguna');
+    }
+
+    public function make_user() {
+        $email=$this->input->post('email');
+        $this->user->make_user($email);
+        redirect('dasbor/admin');
+
     }
 }

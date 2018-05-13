@@ -1,5 +1,13 @@
 <?php $GLOBALS['user'] = $user ?>
-
+<script>
+function myFunction() {
+    var x = $("#email").val();
+    var r = confirm("Apakah Anda Yakin Akan Menjadikan "+ x +" Sebagai Admin?");
+    if (r == true) {
+        $("#form_make_admin").submit();
+    }
+}
+</script>
 <?php function main() { ?>
     <?php $user = $GLOBALS['user'] ?>
     <?php if (isset($user)): ?>
@@ -17,6 +25,7 @@
                             <th>Nama Belakang</th>
                             <th>Jenis Kelamin</th>
                             <th>Bergabung</th>
+                            <th>Action</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -27,6 +36,12 @@
                                 <td><?php echo @$row->last_name ?? '-' ?></td>
                                 <td><?php echo @$row->gender ?? '-' ?></td>
                                 <td><?php echo @date('d/m/Y H:i:s', strtotime($row->created) + 25200) ?></td>
+                                <td>
+                                    <form method="POST" action="<?= base_url(); ?>Dasbor/make_admin" id="form_make_admin">
+                                        <input type="hidden" value="<?= $row->email; ?>" name="email" id="email">
+                                    </form>
+                                        <input type="button" value="Jadikan Admin" id="make_admin" onclick="myFunction()"> 
+                                </td>
                             </tr>
                         <?php } ?>
                         </tbody>
