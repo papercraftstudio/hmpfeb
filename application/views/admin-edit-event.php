@@ -22,13 +22,13 @@
 
 <div class="box_general padding_bottom">
   <div class="header_box version_2">
-      <h2><i class="fa fa-file"></i>Edit Halaman</h2>
+      <h2><i class="fa fa-file"></i>Edit Event</h2>
   </div>
   <div class="card-body">
     <div class="table-responsive">
     <?php
 
-    echo form_open('dasbor/editted_page'); ?>
+    echo form_open('dasbor/editted_event'); ?>
 
     <?php 
 
@@ -61,19 +61,29 @@
     );
     echo form_textarea($data);
 
-    
-    //Show preview button
+    //Show page title field
+    echo form_label('Google URL : ','title');
     $data = array(
-      'type' => 'submit',
-      'name' => 'preview',
-      'value' => 'Preview'
+
+      'name' => 'url',
+      'placeholder' => 'URL Google Form',
+      'class' => 'url',
+      'value' => $admin->url
     );
-    echo form_submit($data);
+    echo form_input($data);
+
+    echo("</br>");
+
+    //Show cancel button
+    echo anchor('dasbor/events', 'Cancel', 'class="btn_1 gray"');
+
     //Show submit button
     $data = array(
       'type' => 'submit',
       'name' => 'update',
-      'value' => 'update'
+      'value' => 'update',
+      'class' => 'btn_1'
+
     );
     echo form_submit($data);
 
@@ -92,4 +102,5 @@
 
 
 <?php require_once 'layout/dashboard/index.php' ?>
+
 
