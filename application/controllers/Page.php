@@ -20,7 +20,7 @@ class Page extends MY_Controller {
    }
 
    function visi_misi() {
-   		$data['guest'] = $this->M_Page->get_page(1);
+   		$data['guest'] = $this->M_Page->get_page(2);
    		$this->load->view('single-page',$data);
    }
 }
