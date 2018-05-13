@@ -47,5 +47,13 @@ class Dasbor extends MY_Controller {
           'content' => $this->input->post('content')
 
         );
+
+          $id = $this->input->post('id');
+
+        //update to db
+        $this->m_page->update($data,$id);
+
+        //load view
+        redirect('dasbor/page');
         }
 }
