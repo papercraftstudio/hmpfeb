@@ -91,4 +91,12 @@ class User extends CI_Model {
             return false;
         }
     }
+
+    public function make_admin($email){
+        $this->db->query("UPDATE users SET role='admin' where email = '$email'");
+    }
+
+    public function make_user($email){
+        $this->db->query("UPDATE users SET role='user' where email = '$email'");
+    }
 }

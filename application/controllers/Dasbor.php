@@ -55,5 +55,17 @@ class Dasbor extends MY_Controller {
 
         //load view
         redirect('dasbor/page');
-        }
+    }
+
+    public function make_admin() {
+        $email=$this->input->post('email');
+        $this->user->make_admin($email);
+        redirect('dasbor/pengguna');
+    }
+
+    public function make_user() {
+        $email=$this->input->post('email');
+        $this->user->make_user($email);
+        redirect('dasbor/admin');
+    }
 }
