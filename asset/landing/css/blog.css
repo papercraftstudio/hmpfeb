@@ -403,3 +403,7 @@ article.blog .post_info ul li:last-child {
 .comment_info span {
   padding: 0 10px;
 }
+
+.post-content ol li {
+  list-style-type: decimal !important;
+}
