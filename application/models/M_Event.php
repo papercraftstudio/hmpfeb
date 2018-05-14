@@ -9,13 +9,13 @@ class M_Event extends CI_Model {
   }
 
 
-  function get_all_pages() {
+  function get_all_events() {
     $query=$this->db->get('m_event');
     $result = $query->result();
     return($result);
   }
 
-  function get_page($id) {
+  function get_event($id) {
 
     $this->db->where('id',$id);
     $page = $this->db->get('m_event')->row();

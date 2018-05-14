@@ -10,6 +10,7 @@ class Home extends MY_Controller {
             parent::MIDDLEWARE['USER'],
             parent::MIDDLEWARE['ADMIN']
         ]);
+        $this->load->model('m_event');
     }
 
     public function index() {
@@ -34,6 +35,9 @@ class Home extends MY_Controller {
             $this->session->set_userdata('user', $user_data);
             redirect();
         }
-        $this->load->view('home');
+        //Get event data
+        $data['events'] = $this->m_event->get_all_events();
+
+        $this->load->view('home',$data);
     }
 }

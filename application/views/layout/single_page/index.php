@@ -3,6 +3,7 @@
 <?php require_once 'head.php' ?>
 <body>
 <?php require_once 'header.php' ?>
+
 <main>
 	<div class="container margin_60">
 		<div class="row">

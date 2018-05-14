@@ -43,7 +43,7 @@ class Dasbor extends MY_Controller {
 
     public function edit_event() {
         $id = $this->input->get('id');
-        $this->data['admin'] = $this->m_event->get_page($id);
+        $this->data['admin'] = $this->m_event->get_event($id);
         $this->load->view('admin-edit-event',$this->data);
     }
 
@@ -105,7 +105,7 @@ class Dasbor extends MY_Controller {
     }    
 
     public function events() {
-         $data['admin'] = $this->m_event->get_all_pages();
+         $data['admin'] = $this->m_event->get_all_events();
         
         $this->load->view('admin-list-event',$data);
     }
