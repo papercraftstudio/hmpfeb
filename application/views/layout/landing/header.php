@@ -31,16 +31,7 @@
                     <ul>
                         <li><a href="<?php echo base_url() ?>" class="show-submenu"> Beranda</a></li>
                         <li><a href="<?php echo base_url('galeri') ?>"> Galeri</a></li>
-                        <li><a href="<?php echo base_url('galeri') ?>"> Kajian</a></li>
-                        <li><span><a href="#0">Events</a></span>
-                            <ul> 
-                                <?php foreach($events as $event): ?>
-                                <li><a href="event/?id=<?= $event->id ?>"><?= $event->title ?></a></li>
-                                <?php endforeach; ?>
-                                
-                            </ul>
-
-                        </li>
+                        <li><a href="<?php echo base_url('kajian') ?>"> Kajian</a></li>
                         <li><a href="<?php echo base_url('page/about_us') ?>"> About Us</a></li>
                         <li><a href="<?php echo base_url('page/visi_misi') ?>"> Visi &amp; Misi</a></li>
                     </ul>

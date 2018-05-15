@@ -22,13 +22,13 @@
 
 <div class="box_general padding_bottom">
   <div class="header_box version_2">
-      <h2><i class="fa fa-file"></i>Insert Event</h2>
+      <h2><i class="fa fa-file"></i>Insert Kajian</h2>
   </div>
   <div class="card-body">
     <div class="table-responsive">
     <?php
 
-    echo form_open('dasbor/added_event'); ?>
+    echo form_open('dasbor/added_kajian'); ?>
 
     <?php 
 
@@ -61,21 +61,10 @@
     );
     echo form_textarea($data);
 
-    //Show page title field
-    echo form_label('Google URL : ','title');
-    $data = array(
-
-      'name' => 'url',
-      'placeholder' => 'URL Google Form',
-      'class' => 'url',
-      
-    );
-    echo form_input($data);
-
     echo("</br>");
 
     //Show cancel button
-    echo anchor('dasbor/events', 'Cancel', 'class="btn_1 gray"');
+    echo anchor('dasbor/kajian', 'Cancel', 'class="btn_1 gray"');
 
     //Show submit button
     $data = array(
