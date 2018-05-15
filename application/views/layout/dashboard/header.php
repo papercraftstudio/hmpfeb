@@ -25,7 +25,7 @@
                    href="#collapseProfile"
                    data-parent="#exampleAccordion">
                     <i class="fa fa-fw fa-table"></i>
-                    <span class="nav-link-text">Data</span>
+                    <span class="nav-link-text">User</span>
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseProfile">
                     <li><a href="<?php echo base_url('dasbor/admin') ?>">Admin</a></li>
@@ -46,10 +46,17 @@
                 </a>
             </li>
 
+
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
                 <a class="nav-link" href="<?php echo base_url('dasbor/kajian') ?>">
                     <i class="fa fa-fw fa-dashboard"></i>
                     <span class="nav-link-text">Kajian</span>
+
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+                <a class="nav-link" href="<?php echo base_url('dasbor/galir') ?>">
+                    <i class="fa fa-fw fa-dashboard"></i>
+                    <span class="nav-link-text">Galir</span>
+
                 </a>
             </li>
         </ul>
