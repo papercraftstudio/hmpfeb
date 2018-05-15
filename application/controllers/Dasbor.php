@@ -10,6 +10,7 @@ class Dasbor extends MY_Controller {
         ]);
         $this->load->model('m_page');
         $this->load->model('m_event');
+        $this->load->model('m_perkuliahan');
         $this->load->helper('form');
     }
 
@@ -121,5 +122,10 @@ class Dasbor extends MY_Controller {
         $this->user->make_user($email);
         redirect('dasbor/admin');
 
+    }
+
+    public function galir() {
+        $data['admin'] = $this->m_perkuliahan->list_galir();
+        $this->load->view('admin-list-galir',$data);
     }
 }
