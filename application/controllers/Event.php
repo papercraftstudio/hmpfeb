@@ -26,7 +26,6 @@ class Event extends MY_Controller {
    }
 
 
-
    function index() {
       $id = $this->input->get('id');
       $data['guest'] = $this->M_Event->get_event($id);
@@ -36,4 +35,6 @@ class Event extends MY_Controller {
       
       $this->load->view('single-page',$data);
    }
+
+   
 }

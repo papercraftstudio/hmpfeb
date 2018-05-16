@@ -86,7 +86,8 @@ class Dasbor extends MY_Controller {
 
           'title' => $this->input->post('title'),
           'content' => $this->input->post('content'),
-          'url' => $this->input->post('url')
+          'url' => $this->input->post('url'),
+          'date' => date("Y-m-d H:i:s");
 
         );
         //update to db
@@ -200,6 +201,8 @@ class Dasbor extends MY_Controller {
         $data['admin'] = $this->m_perkuliahan->list_galir();
         $this->load->view('admin-list-galir',$data);
     }
+
+
 
 
 
