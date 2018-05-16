@@ -8,7 +8,7 @@
       <i class="fa fa-table"></i> Daftar Event
   </div>
       <div class="card-body">
-      <a href="<?= base_url('dasbor/add_event') ?>" class="btn_1">+ Add Event</a>
+      <a href="<?= base_url('dasbor/add_kajian') ?>" class="btn_1">+ Add kajian</a>
         <div class="table-responsive">
           <table class="table table-bordered" id="users" width="100%" cellspacing="0">
             <thead>
@@ -16,19 +16,19 @@
                 
                 <th>Title</th>
                 <th>Content</th>
-                <th>URL</th>
+                
                 <th colspan="2"></th>
               </tr>
             </thead>
             <tbody>
-            <?php foreach ($admin as $event): ?>
+            <?php foreach ($admin as $kajian): ?>
               <tr>
                 
-                <td><?= $event->title ?></td>
-                <td><?= strip_tags(substr($event->content,0,50)) ?></td>
-                <td><a href="<?= $event->url ?>"><?= $event->url ?></a></td>
-                <td><a href="<?= base_url() ?>dasbor/edit_event?id=<?= $event->id ?>">Edit</a></td>
-                <td><a href="<?= base_url() ?>dasbor/delete_event?id=<?= $event->id ?>">Hapus</a></td>
+                <td><?= $kajian->title ?></td>
+                <td><?= strip_tags(substr($kajian->content,0,50)) ?></td>
+                
+                <td><a href="<?= base_url() ?>dasbor/edit_kajian?id=<?= $kajian->id ?>">Edit</a></td>
+                <td><a href="<?= base_url() ?>dasbor/delete_kajian?id=<?= $kajian->id ?>">Hapus</a></td>
 
               </tr>
             </tbody>

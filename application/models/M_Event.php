@@ -27,6 +27,11 @@ class M_Event extends CI_Model {
     $this->db->update('m_event',$data);
   }
 
+  function delete($id) {
+    $this->db->where('id',$id);
+    $this->db->delete('m_event');
+  }
+
   function insert($data) {
     $this->db->insert('m_event',$data);
   }

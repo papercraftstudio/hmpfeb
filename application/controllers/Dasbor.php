@@ -10,7 +10,10 @@ class Dasbor extends MY_Controller {
         ]);
         $this->load->model('m_page');
         $this->load->model('m_event');
+
+        $this->load->model('m_kajian');
         $this->load->model('m_perkuliahan');
+
         $this->load->helper('form');
     }
 
@@ -51,6 +54,31 @@ class Dasbor extends MY_Controller {
     public function add_event() {
         $this->data['admin'] = "";
         $this->load->view('admin-add-event',$this->data);
+    }
+
+    public function delete_event() {
+        $id = $this->input->get('id');
+
+        //delete data in db
+        $this->m_event->delete($id);
+
+        //load view
+        redirect('dasbor/events');
+    }
+
+    public function add_kajian() {
+        $this->data['admin'] = "";
+        $this->load->view('admin-add-kajian',$this->data);
+    }
+
+    public function delete_kajian() {
+        $id = $this->input->get('id');
+
+        //delete data in db
+        $this->m_kajian->delete($id);
+
+        //load view
+        redirect('dasbor/kajian');
     }
 
     public function added_event() {
@@ -123,6 +151,50 @@ class Dasbor extends MY_Controller {
         redirect('dasbor/admin');
 
     }
+
+
+    public function kajian() {
+        $data['admin'] = $this->m_kajian->get_all_kajian();
+        $this->load->view('admin-list-kajian',$data);
+    }
+
+    public function edit_kajian() {
+        $id = $this->input->get('id');
+        $this->data['admin'] = $this->m_kajian->get_kajian($id);
+        $this->load->view('admin-edit-kajian',$this->data);
+    }    
+
+    public function added_kajian() {
+        $data = array(
+
+          'title' => $this->input->post('title'),
+          'content' => $this->input->post('content'),
+
+        );
+        //update to db
+        $this->m_kajian->insert($data);
+
+        //load view
+        redirect('dasbor/kajian');        
+    }
+
+    public function editted_kajian() {
+        $data = array(
+
+          'title' => $this->input->post('title'),
+          'content' => $this->input->post('content'),
+          
+
+        );
+
+          $id = $this->input->post('id');
+
+        //update to db
+        $this->m_kajian->update($data,$id);
+
+        //load view
+        redirect('dasbor/kajian');
+    }  
 
     public function galir() {
         $data['admin'] = $this->m_perkuliahan->list_galir();

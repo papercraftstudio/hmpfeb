@@ -45,10 +45,18 @@
                     <span class="nav-link-text">Events</span>
                 </a>
             </li>
+
+
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+                <a class="nav-link" href="<?php echo base_url('dasbor/kajian') ?>">
+                    <i class="fa fa-fw fa-dashboard"></i>
+                    <span class="nav-link-text">Kajian</span>
+
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
                 <a class="nav-link" href="<?php echo base_url('dasbor/galir') ?>">
                     <i class="fa fa-fw fa-dashboard"></i>
                     <span class="nav-link-text">Galir</span>
+
                 </a>
             </li>
         </ul>
