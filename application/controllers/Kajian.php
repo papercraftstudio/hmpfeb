@@ -24,4 +24,8 @@ class Event extends MY_Controller {
       
       $this->load->view('single-page',$data);
    }
+
+   function all() {
+    $this->load->view('single-page',$data);
+   }
 }
