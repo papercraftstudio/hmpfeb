@@ -31,6 +31,11 @@ class M_Kajian extends CI_Model {
     $this->db->insert('m_kajian',$data);
   }
 
+  function delete($id) {
+    $this->db->where('id',$id);
+    $this->db->delete('m_kajian');
+  }
+
 
 }
  ?>

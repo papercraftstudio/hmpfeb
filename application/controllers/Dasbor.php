@@ -56,9 +56,29 @@ class Dasbor extends MY_Controller {
         $this->load->view('admin-add-event',$this->data);
     }
 
+    public function delete_event() {
+        $id = $this->input->get('id');
+
+        //delete data in db
+        $this->m_event->delete($id);
+
+        //load view
+        redirect('dasbor/events');
+    }
+
     public function add_kajian() {
         $this->data['admin'] = "";
         $this->load->view('admin-add-kajian',$this->data);
+    }
+
+    public function delete_kajian() {
+        $id = $this->input->get('id');
+
+        //delete data in db
+        $this->m_kajian->delete($id);
+
+        //load view
+        redirect('dasbor/kajian');
     }
 
     public function added_event() {
@@ -180,5 +200,7 @@ class Dasbor extends MY_Controller {
         $data['admin'] = $this->m_perkuliahan->list_galir();
         $this->load->view('admin-list-galir',$data);
     }
+
+
 
 }

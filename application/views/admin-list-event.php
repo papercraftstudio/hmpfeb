@@ -28,6 +28,7 @@
                 <td><?= strip_tags(substr($event->content,0,50)) ?></td>
                 <td><a href="<?= $event->url ?>"><?= $event->url ?></a></td>
                 <td><a href="<?= base_url() ?>dasbor/edit_event?id=<?= $event->id ?>">Edit</a></td>
+                <td><a href="<?= base_url() ?>dasbor/delete_event?id=<?= $event->id ?>">Hapus</a></td>
 
               </tr>
             </tbody>

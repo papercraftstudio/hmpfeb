@@ -28,6 +28,7 @@
                 <td><?= strip_tags(substr($kajian->content,0,50)) ?></td>
                 
                 <td><a href="<?= base_url() ?>dasbor/edit_kajian?id=<?= $kajian->id ?>">Edit</a></td>
+                <td><a href="<?= base_url() ?>dasbor/delete_kajian?id=<?= $kajian->id ?>">Hapus</a></td>
 
               </tr>
             </tbody>
