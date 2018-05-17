@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Event extends MY_Controller {
+class Kajian extends MY_Controller {
 
   function __construct()
   {
@@ -26,6 +26,7 @@ class Event extends MY_Controller {
    }
 
    function all() {
-    $this->load->view('single-page',$data);
+    $data['guest'] = $this->M_Kajian->get_all_kajian();
+    $this->load->view('guest-list-kajian',$data);
    }
 }
