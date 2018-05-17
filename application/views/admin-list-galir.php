@@ -1,5 +1,20 @@
 <?php $GLOBALS['admin'] = $admin ?>
 
+<script>
+function editFunction() {
+    $('#form_action').attr('action', '<?= base_url(); ?>Dasbor/list_edit_galir');
+    $('#form_action').submit();
+}
+
+function deleteFunction() {
+    var r = confirm("Apakah Anda Yakin Akan Menghapus Data Tersebut?");
+    if (r == true) {
+      $('#form_action').attr('action', '<?= base_url(); ?>Dasbor/delete_galir');
+      $('#form_action').submit();
+    }
+}
+</script>
+
 <?php function main() { ?>
     <?php $admin = $GLOBALS['admin'] ?>
     <?php if (isset($admin)): ?>
@@ -8,9 +23,9 @@
       <i class="fa fa-table"></i> Galir
   </div>
       <div class="card-body">
-      <a href="<?= base_url('dasbor/add_galir') ?>" class="btn_1">+ Add Galir</a>
+      <a href="<?= base_url('dasbor/list_add_galir') ?>" class="btn_1">+ Add Galir</a>
         <div class="table-responsive">
-          <table class="table table-bordered" id="users" width="100%" cellspacing="0">
+          <table class="table table-bordered" id="galir" width="100%" cellspacing="0">
             <thead>
               <tr>
                 <th>Kode Matkul</th>
@@ -30,11 +45,11 @@
                 <td><?= $galir->sks ?></td>
                 <td><?= $galir->kosyarat ?></td>
                 <td>
-                  <form action="" method="POST">
+                  <form action="" method="POST" id="form_action">
                     <input type="hidden" name="id" id="id" value="<?= $galir->id; ?>"/>
                   </form>
-                  <button>edit</button>
-                  <button>delete</delete>
+                  <input type="button" value="EDIT" onclick="editFunction()"> 
+                  <input type="button" value="Delete" onclick="deleteFunction()">
                 </td>
 
               </tr>

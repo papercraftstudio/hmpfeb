@@ -202,8 +202,48 @@ class Dasbor extends MY_Controller {
         $this->load->view('admin-list-galir',$data);
     }
 
+    public function list_edit_galir() {
+        $id=$this->input->post('id');
+        $data['admin'] = $this->m_perkuliahan->select_edit_galir($id);
+        $this->load->view('admin-edit-galir',$data);
+    }
+
+    public function edit_galir() {
+        $data['kode_matkul'] = $this->input->post('kode_matkul');
+        $data['nama_matkul'] = $this->input->post('nama_matkul');
+        $data['semester'] = $this->input->post('semester');
+        $data['sks'] = $this->input->post('sks');
+        $data['kosyarat'] = $this->input->post('kosyarat');
+        $id = $this->input->post('id');
+
+        $this->m_perkuliahan->update_galir($data,$id);
+
+        redirect('dasbor/galir');
+    }
+
+    public function delete_galir() {
+        $id= $this->input->post('id');
+        $this->m_perkuliahan->delete_galir($id);
+
+        redirect('dasbor/galir');
+    }
 
 
+    public function list_add_galir() {
+        $this->data['admin'] = "";
+        $this->load->view("admin-add-galir",$this->data);
+    }
 
+    public function add_galir() {
+        $data['kode_matkul'] = $this->input->post('kode_matkul');
+        $data['nama_matkul'] = $this->input->post('nama_matkul');
+        $data['semester'] = $this->input->post('semester');
+        $data['sks'] = $this->input->post('sks');
+        $data['kosyarat'] = $this->input->post('kosyarat');
+
+        $this->m_perkuliahan->add_galir($data);
+
+        redirect('dasbor/galir');
+    }
 
 }

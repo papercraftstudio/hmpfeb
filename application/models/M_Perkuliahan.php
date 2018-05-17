@@ -17,7 +17,7 @@ class M_Perkuliahan extends CI_Model {
     function update_galir($data,$id)
     {
         $this->db->where('id',$id);
-        $this->db->update('m_event',$data);
+        $this->db->update('m_galir',$data);
     }
 
     function add_galir($data)
@@ -28,7 +28,15 @@ class M_Perkuliahan extends CI_Model {
     function delete_galir($id)
     {
         $this->db->where('id', $id);
-        $this->db->delete('mytable');
+        $this->db->delete('m_galir');
+    }
+
+    function select_edit_galir($id)
+    {
+        $this->db->where('id', $id);
+        $query=$this->db->get('m_galir');
+
+        return $query->result();
     }
 }
  ?>
