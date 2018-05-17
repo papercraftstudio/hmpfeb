@@ -87,7 +87,7 @@ class Dasbor extends MY_Controller {
           'title' => $this->input->post('title'),
           'content' => $this->input->post('content'),
           'url' => $this->input->post('url'),
-          'date' => date("Y-m-d H:i:s");
+          'date' => date("Y-m-d H:i:s")
 
         );
         //update to db
