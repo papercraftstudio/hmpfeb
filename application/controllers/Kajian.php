@@ -26,6 +26,9 @@ class Kajian extends MY_Controller {
    }
 
    function all() {
+    //Get event data
+      $data['events'] = $this->M_Kajian->get_all_kajian();
+    
     $data['guest'] = $this->M_Kajian->get_all_kajian();
     $this->load->view('guest-list-kajian',$data);
    }

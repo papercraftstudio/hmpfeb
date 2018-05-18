@@ -18,7 +18,7 @@
                 <div class="post_info">
                   <small><?= $kajian->date ?></small>
                   <h3><a href="blog-post.html"><?= $kajian->title ?></a></h3>
-                  <p><?= strip_tags(substr($kajian->content,0,50)) ?></p>
+                  <p><?= strip_tags(substr($kajian->content,0,500)) ?></p>
                   <p><a href="<?= base_url("kajian/?id=" . $kajian->id) ?>">Read More...</a></p>
                 </div>
               </div>
@@ -58,5 +58,4 @@
 
 
 <?php require_once 'layout/single_page/index.php' ?>
-
 
