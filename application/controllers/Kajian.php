@@ -17,10 +17,10 @@ class Kajian extends MY_Controller {
 
    function index() {
       $id = $this->input->get('id');
-      $data['guest'] = $this->M_Kajian->get_event($id);
+      $data['guest'] = $this->M_Kajian->get_kajian($id);
 
       //Get event data
-      $data['events'] = $this->M_Kajian->get_all_events();
+      $data['events'] = $this->M_Kajian->get_all_kajian();
       
       $this->load->view('single-page',$data);
    }

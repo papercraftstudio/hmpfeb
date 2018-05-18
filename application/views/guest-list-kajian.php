@@ -17,14 +17,9 @@
               <div class="col-lg-12">
                 <div class="post_info">
                   <small><?= $kajian->date ?></small>
-                  <h3><a href="blog-post.html">Nec nihil menandri appellantur ut</a></h3>
-                  <p>Quodsi sanctus pro eu, ne audire scripserit quo. Vel an enim offendit salutandi, in eos quod omnes epicurei, ex veri qualisque scriptorem mei.</p>
-                  <ul>
-                    <li>
-                      <div class="thumb"><img src="img/thumb_blog.jpg" alt=""></div> Jessica Hoops
-                    </li>
-                    <li><i class="icon_comment_alt"></i> 20</li>
-                  </ul>
+                  <h3><a href="blog-post.html"><?= $kajian->title ?></a></h3>
+                  <p><?= strip_tags(substr($kajian->content,0,50)) ?></p>
+                  <p><a href="<?= base_url("kajian/?id=" . $kajian->id) ?>">Read More...</a></p>
                 </div>
               </div>
             </div>
