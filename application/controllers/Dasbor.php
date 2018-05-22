@@ -196,6 +196,7 @@ class Dasbor extends MY_Controller {
         redirect('dasbor/kajian');
     }  
 
+    //galir
     public function galir() {
         $data['admin'] = $this->m_perkuliahan->list_galir();
         $this->load->view('admin-list-galir',$data);
@@ -242,5 +243,54 @@ class Dasbor extends MY_Controller {
         $this->m_perkuliahan->add_galir($data);
 
         redirect('dasbor/galir');
+    }
+
+    //dosen
+    public function dosen() {
+        $data['admin'] = $this->m_perkuliahan->list_dosen();
+        $this->load->view('admin-list-dosen',$data);
+    }
+
+    public function list_edit_dosen() {
+        $id=$this->input->post('id');
+        $data['admin'] = $this->m_perkuliahan->select_edit_dosen($id);
+        $this->load->view('admin-edit-dosen',$data);
+    }
+
+    public function edit_dosen() {
+        $data['nama'] = $this->input->post('nama');
+        $data['alamat'] = $this->input->post('alamat');
+        $data['matakuliah'] = $this->input->post('matakuliah');
+        $data['gender'] = $this->input->post('gender');
+        $data['dob'] = date("Y-m-d", strtotime($this->input->post('dob')));
+        $id = $this->input->post('id');
+
+        $this->m_perkuliahan->update_dosen($data,$id);
+
+        redirect('dasbor/dosen');
+    }
+
+    public function delete_dosen() {
+        $id= $this->input->post('id');
+        $this->m_perkuliahan->delete_dosen($id);
+
+        redirect('dasbor/dosen');
+    }
+
+    public function list_add_dosen() {
+        $this->data['admin'] = "";
+        $this->load->view("admin-add-dosen",$this->data);
+    }
+
+    public function add_dosen() {
+        $data['nama'] = $this->input->post('nama');
+        $data['alamat'] = $this->input->post('alamat');
+        $data['matakuliah'] = $this->input->post('matakuliah');
+        $data['gender'] = $this->input->post('gender');
+        $data['dob'] = date("Y-m-d", strtotime($this->input->post('dob')));
+
+        $this->m_perkuliahan->add_dosen($data);
+
+        redirect('dasbor/dosen');
     }
 }
