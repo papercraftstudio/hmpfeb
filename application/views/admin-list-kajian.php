@@ -16,7 +16,7 @@
                 
                 <th>Title</th>
                 <th>Content</th>
-                
+                <th>Date</th>
                 <th colspan="2"></th>
               </tr>
             </thead>
@@ -26,7 +26,7 @@
                 
                 <td><?= $kajian->title ?></td>
                 <td><?= strip_tags(substr($kajian->content,0,50)) ?></td>
-                
+                <td><?= $kajian->title ?></td>
                 <td><a href="<?= base_url() ?>dasbor/edit_kajian?id=<?= $kajian->id ?>">Edit</a></td>
                 <td><a href="<?= base_url() ?>dasbor/delete_kajian?id=<?= $kajian->id ?>">Hapus</a></td>
 
