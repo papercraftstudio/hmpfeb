@@ -10,7 +10,7 @@
 			foreach($query->result() as $row) {
 				echo("<h2> ". $row->title ."</h2>");
 				echo("<p>" . $row->content ."</p>");
-				echo("<a href=". base_url('') .">Selengkapnya...</a>")
+				echo("<a href=". base_url('kajian?id=' . $row->id) .">Selengkapnya...</a>");
 			}
 		 ?>
 
