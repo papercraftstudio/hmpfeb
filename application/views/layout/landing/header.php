@@ -35,14 +35,20 @@
                         <li><span><a class="custom-dropdown">Events</a></span>
                             <ul> 
                                 <?php foreach($events as $event): ?>
-                                <li><a href="event/?id=<?= $event->id ?>"><?= $event->title ?></a></li>
+                                    <li><a href="event/?id=<?= $event->id ?>"><?= $event->title ?></a></li>
                                 <?php endforeach; ?>
                                 
                             </ul>
-
                         </li>
-                        <li><a href="<?php echo base_url('page/about_us') ?>"> About Us</a></li>
-                        <li><a href="<?php echo base_url('page/visi_misi') ?>"> Visi &amp; Misi</a></li>
+                        <li><span><a class="custom-dropdown">About Us</a></span>
+                            <ul> 
+                                <li><a href="<?php echo base_url('page/about_us') ?>"> About Us</a></li>
+                                <li><a href="<?php echo base_url('page/visi_misi') ?>"> Visi &amp; Misi</a></li>
+                                <li><a href="<?php echo base_url('page/contact_us') ?>">Contact Us</a></li>
+                            </ul>
+                        </li>
+
+
                     </ul>
                 </div>
             </nav>
