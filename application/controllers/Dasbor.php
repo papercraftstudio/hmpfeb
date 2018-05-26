@@ -89,7 +89,7 @@ class Dasbor extends MY_Controller {
           'url' => $this->input->post('url'),
           'date' => date("Y-m-d H:i:s")
 
-        );
+      );
         //update to db
         $this->m_event->insert($data);
 
@@ -104,9 +104,9 @@ class Dasbor extends MY_Controller {
           'title' => $this->input->post('title'),
           'content' => $this->input->post('content')
 
-        );
+      );
 
-          $id = $this->input->post('id');
+        $id = $this->input->post('id');
 
         //update to db
         $this->m_page->update($data,$id);
@@ -123,9 +123,9 @@ class Dasbor extends MY_Controller {
           'content' => $this->input->post('content'),
           'url' => $this->input->post('url')
 
-        );
+      );
 
-          $id = $this->input->post('id');
+        $id = $this->input->post('id');
 
         //update to db
         $this->m_event->update($data,$id);
@@ -135,164 +135,228 @@ class Dasbor extends MY_Controller {
     }    
 
     public function events() {
-         $data['admin'] = $this->m_event->get_all_events();
-        
-        $this->load->view('admin-list-event',$data);
-    }
+     $data['admin'] = $this->m_event->get_all_events();
 
-    public function make_admin() {
-        $email=$this->input->post('email');
-        $this->user->make_admin($email);
-        redirect('dasbor/pengguna');
-    }
+     $this->load->view('admin-list-event',$data);
+ }
 
-    public function make_user() {
-        $email=$this->input->post('email');
-        $this->user->make_user($email);
-        redirect('dasbor/admin');
+ public function make_admin() {
+    $email=$this->input->post('email');
+    $this->user->make_admin($email);
+    redirect('dasbor/pengguna');
+}
 
-    }
+public function make_user() {
+    $email=$this->input->post('email');
+    $this->user->make_user($email);
+    redirect('dasbor/admin');
+
+}
 
 
-    public function kajian() {
-        $data['admin'] = $this->m_kajian->get_all_kajian();
-        $this->load->view('admin-list-kajian',$data);
-    }
+public function kajian() {
+    $data['admin'] = $this->m_kajian->get_all_kajian();
+    $this->load->view('admin-list-kajian',$data);
+}
 
-    public function edit_kajian() {
-        $id = $this->input->get('id');
-        $this->data['admin'] = $this->m_kajian->get_kajian($id);
-        $this->load->view('admin-edit-kajian',$this->data);
-    }    
+public function edit_kajian() {
+    $id = $this->input->get('id');
+    $this->data['admin'] = $this->m_kajian->get_kajian($id);
+    $this->load->view('admin-edit-kajian',$this->data);
+}    
 
-    public function added_kajian() {
-        $data = array(
+public function added_kajian() {
+    $data = array(
 
-          'title' => $this->input->post('title'),
-          'content' => $this->input->post('content'),
+      'title' => $this->input->post('title'),
+      'content' => $this->input->post('content'),
 
-        );
+  );
         //update to db
-        $this->m_kajian->insert($data);
+    $this->m_kajian->insert($data);
 
         //load view
-        redirect('dasbor/kajian');        
-    }
+    redirect('dasbor/kajian');        
+}
 
-    public function editted_kajian() {
-        $data = array(
+public function editted_kajian() {
+    $data = array(
 
-          'title' => $this->input->post('title'),
-          'content' => $this->input->post('content'),
-          
+      'title' => $this->input->post('title'),
+      'content' => $this->input->post('content'),
 
-        );
 
-          $id = $this->input->post('id');
+  );
+
+    $id = $this->input->post('id');
 
         //update to db
-        $this->m_kajian->update($data,$id);
+    $this->m_kajian->update($data,$id);
 
         //load view
-        redirect('dasbor/kajian');
-    }  
+    redirect('dasbor/kajian');
+}  
 
     //galir
-    public function galir() {
-        $data['admin'] = $this->m_perkuliahan->list_galir();
-        $this->load->view('admin-list-galir',$data);
-    }
+public function galir() {
+    $data['admin'] = $this->m_perkuliahan->list_galir();
+    $this->load->view('admin-list-galir',$data);
+}
 
-    public function list_edit_galir() {
-        $id=$this->input->post('id');
-        $data['admin'] = $this->m_perkuliahan->select_edit_galir($id);
-        $this->load->view('admin-edit-galir',$data);
-    }
+public function list_edit_galir() {
+    $id=$this->input->post('id');
+    $data['admin'] = $this->m_perkuliahan->select_edit_galir($id);
+    $this->load->view('admin-edit-galir',$data);
+}
 
-    public function edit_galir() {
-        $data['kode_matkul'] = $this->input->post('kode_matkul');
-        $data['nama_matkul'] = $this->input->post('nama_matkul');
-        $data['semester'] = $this->input->post('semester');
-        $data['sks'] = $this->input->post('sks');
-        $data['kosyarat'] = $this->input->post('kosyarat');
-        $id = $this->input->post('id');
+public function edit_galir() {
+    $data['kode_matkul'] = $this->input->post('kode_matkul');
+    $data['nama_matkul'] = $this->input->post('nama_matkul');
+    $data['semester'] = $this->input->post('semester');
+    $data['sks'] = $this->input->post('sks');
+    $data['kosyarat'] = $this->input->post('kosyarat');
+    $id = $this->input->post('id');
 
-        $this->m_perkuliahan->update_galir($data,$id);
+    $this->m_perkuliahan->update_galir($data,$id);
 
-        redirect('dasbor/galir');
-    }
+    redirect('dasbor/galir');
+}
 
-    public function delete_galir() {
-        $id= $this->input->post('id');
-        $this->m_perkuliahan->delete_galir($id);
+public function delete_galir() {
+    $id= $this->input->post('id');
+    $this->m_perkuliahan->delete_galir($id);
 
-        redirect('dasbor/galir');
-    }
+    redirect('dasbor/galir');
+}
 
 
-    public function list_add_galir() {
-        $this->data['admin'] = "";
-        $this->load->view("admin-add-galir",$this->data);
-    }
+public function list_add_galir() {
+    $this->data['admin'] = "";
+    $this->load->view("admin-add-galir",$this->data);
+}
 
-    public function add_galir() {
-        $data['kode_matkul'] = $this->input->post('kode_matkul');
-        $data['nama_matkul'] = $this->input->post('nama_matkul');
-        $data['semester'] = $this->input->post('semester');
-        $data['sks'] = $this->input->post('sks');
-        $data['kosyarat'] = $this->input->post('kosyarat');
+public function add_galir() {
+    $data['kode_matkul'] = $this->input->post('kode_matkul');
+    $data['nama_matkul'] = $this->input->post('nama_matkul');
+    $data['semester'] = $this->input->post('semester');
+    $data['sks'] = $this->input->post('sks');
+    $data['kosyarat'] = $this->input->post('kosyarat');
 
-        $this->m_perkuliahan->add_galir($data);
+    $this->m_perkuliahan->add_galir($data);
 
-        redirect('dasbor/galir');
-    }
+    redirect('dasbor/galir');
+}
 
     //dosen
-    public function dosen() {
-        $data['admin'] = $this->m_perkuliahan->list_dosen();
-        $this->load->view('admin-list-dosen',$data);
+public function dosen() {
+    $data['admin'] = $this->m_perkuliahan->list_dosen();
+    $this->load->view('admin-list-dosen',$data);
+}
+
+public function list_edit_dosen() {
+    $id=$this->input->post('id');
+    $data['admin'] = $this->m_perkuliahan->select_edit_dosen($id);
+    $this->load->view('admin-edit-dosen',$data);
+}
+
+public function edit_dosen() {
+    $data['nama'] = $this->input->post('nama');
+    $data['alamat'] = $this->input->post('alamat');
+    $data['matakuliah'] = $this->input->post('matakuliah');
+    $data['gender'] = $this->input->post('gender');
+    $data['dob'] = date("Y-m-d", strtotime($this->input->post('dob')));
+    $id = $this->input->post('id');
+
+    $this->m_perkuliahan->update_dosen($data,$id);
+
+    redirect('dasbor/dosen');
+}
+
+public function delete_dosen() {
+    $id= $this->input->post('id');
+    $this->m_perkuliahan->delete_dosen($id);
+
+    redirect('dasbor/dosen');
+}
+
+public function list_add_dosen() {
+    $this->data['admin'] = "";
+    $this->load->view("admin-add-dosen",$this->data);
+}
+
+public function add_dosen() {
+    $data['nama'] = $this->input->post('nama');
+    $data['alamat'] = $this->input->post('alamat');
+    $data['matakuliah'] = $this->input->post('matakuliah');
+    $data['gender'] = $this->input->post('gender');
+    $data['dob'] = date("Y-m-d", strtotime($this->input->post('dob')));
+
+    $this->m_perkuliahan->add_dosen($data);
+
+    redirect('dasbor/dosen');
+}
+
+public function galery() {
+        //$data['admin'] = $this->m_galery->get_all_galery();
+    $data['admin'] = '';
+    $this->load->view('admin-list-galery',$data);
+}
+
+public function add_galery() {
+    $this->data['admin'] = "";
+    $this->load->view('admin-add-galery',$this->data);
+}
+
+public function added_galery() {
+
+    $this->load->model('M_Galery');
+
+
+
+    //upload
+    $config = array(
+        'upload_path' => "./uploads/",
+        'allowed_types' => "gif|jpg|png|jpeg|pdf",
+        'overwrite' => TRUE,
+            'max_size' => "2048000", // Can be set to particular file size , here it is 2 MB(2048 Kb)
+            'max_height' => "768",
+            'max_width' => "1024"
+        );
+    $this->load->library('upload', $config);
+    if($this->upload->do_upload())
+    {
+        $data = array('upload_data' => $this->upload->data());
+        $this->load->view('upload_success',$data);
     }
+    else
+    {
+        $error = array('error' => $this->upload->display_errors());
+        $this->load->view('custom_view', $error);
+    }     
 
-    public function list_edit_dosen() {
-        $id=$this->input->post('id');
-        $data['admin'] = $this->m_perkuliahan->select_edit_dosen($id);
-        $this->load->view('admin-edit-dosen',$data);
-    }
+    //get upload data
+    $upload_data = $this->upload->data();
+    $slide = $this->input->post('slideshow'); 
+    echo("<pre>");
+    var_dump($slide);
+    echo("</pre>");
 
-    public function edit_dosen() {
-        $data['nama'] = $this->input->post('nama');
-        $data['alamat'] = $this->input->post('alamat');
-        $data['matakuliah'] = $this->input->post('matakuliah');
-        $data['gender'] = $this->input->post('gender');
-        $data['dob'] = date("Y-m-d", strtotime($this->input->post('dob')));
-        $id = $this->input->post('id');
+    //check slideshow checkbox
+    $s = (isset($slide)) ? 1 : 0;
 
-        $this->m_perkuliahan->update_dosen($data,$id);
+    //save to db
+    $row = array(
 
-        redirect('dasbor/dosen');
-    }
+      'event' => $this->input->post('event'),
+      'file_name' => $upload_data['file_name'],
+      'content' => $this->input->post('content'),
+      'url' => $this->input->post('url'),
+      'slideshow' =>$s
 
-    public function delete_dosen() {
-        $id= $this->input->post('id');
-        $this->m_perkuliahan->delete_dosen($id);
+    );
 
-        redirect('dasbor/dosen');
-    }
+    $this->M_Galery->insert($row);
 
-    public function list_add_dosen() {
-        $this->data['admin'] = "";
-        $this->load->view("admin-add-dosen",$this->data);
-    }
 
-    public function add_dosen() {
-        $data['nama'] = $this->input->post('nama');
-        $data['alamat'] = $this->input->post('alamat');
-        $data['matakuliah'] = $this->input->post('matakuliah');
-        $data['gender'] = $this->input->post('gender');
-        $data['dob'] = date("Y-m-d", strtotime($this->input->post('dob')));
-
-        $this->m_perkuliahan->add_dosen($data);
-
-        redirect('dasbor/dosen');
-    }
+}
 }
