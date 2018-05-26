@@ -33,6 +33,7 @@ function deleteFunction() {
                 <th>Matakuliah</th>
                 <th>Jenis Kelamin</th>
                 <th>Tanggal Lahir</th>
+                <th>Action</th>
               </tr>
             </thead>
             <tbody>
@@ -47,8 +48,8 @@ function deleteFunction() {
                   <form action="" method="POST" id="form_action">
                     <input type="hidden" name="id" id="id" value="<?= $dosen->id; ?>"/>
                   </form>
-                  <input type="button" value="EDIT" onclick="editFunction()"> 
-                  <input type="button" value="Delete" onclick="deleteFunction()">
+                  <input type="button" class="btn btn-primary" value="EDIT" onclick="editFunction()"> 
+                  <input type="button" class="btn btn-danger" value="Delete" onclick="deleteFunction()">
                 </td>
 
               </tr>

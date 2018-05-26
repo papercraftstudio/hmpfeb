@@ -48,8 +48,8 @@
             <tr>
                 <td colspan="5">
                     <input type="hidden" name="id" id="id" value="<?= $dosen->id; ?>">
-                    <input type="submit" value="EDIT">
-                    <a href="<?= base_url(); ?>dasbor/dosen"> <input type="button" value="CANCEL"></a>
+                    <input type="submit" value="EDIT" class="btn btn-primary">
+                    <a href="<?= base_url(); ?>dasbor/dosen"> <input type="button" class="btn btn-danger" value="CANCEL"></a>
                 </td>
             </tr>
           </table>
