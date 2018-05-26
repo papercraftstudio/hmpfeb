@@ -46,9 +46,13 @@ class Kajian extends MY_Controller {
     $data['prev_link'] = 'Previous';
     $data['prev_tag_open'] = '<li class="page-item">';
     $data['prev_tag_close'] = '</li>';
+    //next
+    $data['next_link'] = 'Next';
+    $data['prev_tag_open'] = '<li class="page-item">';
+    $data['prev_tag_close'] = '</li>';
     //current
-    $data['cur_tag_open'] = '<li class="page-link">';
-    $data['cur_tag_close'] = '</li>';
+    $data['cur_tag_open'] = '<li class="page-item disabled"><a href="" class="page-link">';
+    $data['cur_tag_close'] = '</a></li>';
 
 
     $this->pagination->initialize($data);

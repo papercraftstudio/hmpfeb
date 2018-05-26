@@ -8,7 +8,7 @@
       <div class="row">
 
         <div class="col-lg-12">
-
+        <h2>Kajian</h2>
           <?php 
             foreach ($guest->result() as $kajian) :
            ?>
@@ -32,7 +32,7 @@
 
           </nav>
 
-        <nav aria-label="...">
+<!--         <nav aria-label="...">
           
             <ul class="pagination pagination-sm">
               <li class="page-item disabled">
@@ -45,7 +45,7 @@
                 <a class="page-link" href="#">Next</a>
               </li>
             </ul>
-          </nav>
+          </nav> -->
           <!-- /pagination -->
         </div>
         <!-- /col -->
