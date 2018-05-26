@@ -1,6 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-default fixed-top" id="mainNav">
     <a class="navbar-brand" href="<?php echo base_url() ?>">
-        <img src="/asset/dashboard/img/logo.png" data-retina="true" alt="" width="163" height="36">
+        <img style="float:left" src="/asset/dashboard/img/logo.png" data-retina="true" alt=""height="36">
+        <div style="position:relative; font-size:25px; float:left;">&nbsp; HMP EKONOMI </div>
     </a>
     <button class="navbar-toggler navbar-toggler-right"
     type="button"
