@@ -40,8 +40,8 @@
             <tr>
                 <td colspan="2">
                     <center>
-                        <a href="<?= base_url(); ?>dasbor/dosen"> <input type="button" value="CANCEL"></a>
-                        <input type="submit" value="TAMBAH DATA">
+                      <input type="submit" value="TAMBAH DATA" class="btn btn-primary">
+                        <a href="<?= base_url(); ?>dasbor/dosen"> <input type="button" class="btn btn-danger" value="CANCEL"></a>
                     </center>
                 </td>
             </tr>

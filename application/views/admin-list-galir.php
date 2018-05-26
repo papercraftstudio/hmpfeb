@@ -48,8 +48,8 @@ function deleteFunction() {
                   <form action="" method="POST" id="form_action">
                     <input type="hidden" name="id" id="id" value="<?= $galir->id; ?>"/>
                   </form>
-                  <input type="button" value="EDIT" onclick="editFunction()"> 
-                  <input type="button" value="Delete" onclick="deleteFunction()">
+                  <input type="button" class="btn btn-primary" value="EDIT" onclick="editFunction()"> 
+                  <input type="button" class="btn btn-danger" value="Delete" onclick="deleteFunction()">
                 </td>
 
               </tr>
