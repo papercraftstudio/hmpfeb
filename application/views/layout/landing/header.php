@@ -33,7 +33,7 @@
                         <li><a href="<?php echo base_url() ?>" class="show-submenu"> Beranda</a></li>
                         <li><a href="<?php echo base_url('galeri') ?>"> Galeri</a></li>
                         <li><a href="<?php echo base_url('kajian/all') ?>"> Kajian</a></li>
-                        <li><span><a href="#0">Events</a></span>
+                        <li><span><a class="custom-dropdown">Events</a></span>
                             <ul> 
                                 <?php foreach($events as $event): ?>
                                 <li><a href="event/?id=<?= $event->id ?>"><?= $event->title ?></a></li>
