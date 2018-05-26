@@ -5,14 +5,15 @@
 <header class="header_sticky">
     <div class="container">
         <div class="row">
-            <div class="col-lg-3 col-6">
+            <div class="col-lg-5 col-6">
                 <div id="logo">
                     <a href="<?php echo base_url() ?>">
-                        <img src="<?php echo base_url() ?>asset/landing/img/logo.png" alt="" width="163" height="36">
+                        <img style="float:left" src="<?php echo base_url() ?>asset/landing/img/logo.png" alt="" height="50">
+                        <div style="position:relative; font-size:35px; top:1px; float:left;">&nbsp; HMP EKONOMI </div>
                     </a>
                 </div>
             </div>
-            <nav class="col-lg-9 col-6">
+            <nav class="col-lg-7 col-6">
                 <a class="cmn-toggle-switch cmn-toggle-switch__htx open_close" href="#0"><span>Menu Mobile</span></a>
                 <ul id="top_access">
                     <?php if (!$this->session->userdata('login')): ?>

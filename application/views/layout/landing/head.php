@@ -10,4 +10,5 @@
     <link href="<?php echo base_url() . $dir ?>vendor.css" rel="stylesheet">
     <link href="<?php echo base_url() . $dir ?>icon.min.css" rel="stylesheet">
     <link href="<?php echo base_url() . $dir ?>custom.css" rel="stylesheet">
+    <link rel="shortcut icon" href="<?=base_url();?>asset/landing/img/logo.ico" />
 </head>
