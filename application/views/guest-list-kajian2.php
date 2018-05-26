@@ -9,31 +9,19 @@
 
         <div class="col-lg-12">
 
-          <?php 
-            foreach ($guest->result() as $kajian) :
-           ?>
-          <article class="blog wow fadeIn">
-            <div class="row no-gutters">
-              <div class="col-lg-12">
-                <div class="post_info">
-                  <small><?= $kajian->date ?></small>
-                  <h3><a href="blog-post.html"><?= $kajian->title ?></a></h3>
-                  <p><?= strip_tags(substr($kajian->content,0,500)) ?></p>
-                  <p><a href="<?= base_url("kajian/?id=" . $kajian->id) ?>">Read More...</a></p>
-                </div>
-              </div>
-            </div>
-          </article>
-        <?php endforeach ?>
+              <?php 
+      foreach($guest->result() as $row) {
+        echo("<h2> ". $row->title ."</h2>");
+        echo("<p>" . $row->content ."</p>");
+        echo("<a href=". base_url('kajian?id=' . $row->id) .">Selengkapnya...</a>");
+      }
+     ?>
+
+     <?= $guest->pagin ?>
           <!-- /article -->
 
+  
           <nav aria-label="...">
-          <?= $guest->pagin ?>
-
-          </nav>
-
-        <nav aria-label="...">
-          
             <ul class="pagination pagination-sm">
               <li class="page-item disabled">
                 <a class="page-link" href="#" tabindex="-1">Previous</a>
