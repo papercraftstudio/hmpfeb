@@ -7,7 +7,7 @@
 <main>
 	<div class="container margin_60">
 		<div class="row">
-			<div class="col-lg-9">
+			<div class="col-lg-12">
 			
 				<div class="bloglist singlepost">
 					<?php if (is_callable('main')) main(); ?>
