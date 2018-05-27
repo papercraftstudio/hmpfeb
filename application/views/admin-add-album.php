@@ -6,29 +6,16 @@
 
     <script src="<?= base_url() ?>asset/tinymce/jquery.tinymce.min.js"></script>
     <script src="<?= base_url() ?>asset/tinymce/tinymce.min.js"></script>
-    <script>
-      tinymce.init(
-        { selector:'textarea',
-          theme : 'modern',
-          plugins: 'print preview searchreplace autolink directionality visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists textcolor wordcount imagetools contextmenu colorpicker textpattern help',
-          content_css: [
-            '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
-            '//www.tinymce.com/css/codepen.min.css'
-          ]
-
-      });
-
-  </script>
 
 <div class="box_general padding_bottom">
   <div class="header_box version_2">
-      <h2><i class="fa fa-file"></i>Insert Event</h2>
+      <h2><i class="fa fa-file"></i>Tambah Album Baru</h2>
   </div>
   <div class="card-body">
     <div class="table-responsive">
     <?php
 
-    echo form_open('dasbor/added_event'); ?>
+    echo form_open('dasbor/added_album'); ?>
 
     <?php 
 
@@ -43,39 +30,33 @@
     );
     echo form_input($data);
 
-    //Show page title field
-    echo form_label('Judul Event : ','title');
+    //Show album title
+    echo form_label('Nama Album : &nbsp;','title');
     $data = array(
 
       'name' => 'title',
-      'placeholder' => 'Judul Event',
+      'placeholder' => 'Judul Album',
       'class' => 'title',
       
     );
     echo form_input($data);
 
-    //Show page content field
+    echo("<br>");
+
+    //Show description
+    echo form_label('Deskripsi Album : ','content'); 
+    echo("<br>");
     $data = array(
       'name' => 'content',
       
     );
     echo form_textarea($data);
 
-    //Show page title field
-    echo form_label('Google URL : ','title');
-    $data = array(
-
-      'name' => 'url',
-      'placeholder' => 'URL Google Form',
-      'class' => 'url',
-      
-    );
-    echo form_input($data);
 
     echo("</br>");
 
     //Show cancel button
-    echo anchor('dasbor/events', 'Cancel', 'class="btn_1 gray"');
+    echo anchor('dasbor/album', 'Cancel', 'class="btn_1 gray"');
 
     //Show submit button
     $data = array(

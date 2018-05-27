@@ -135,12 +135,12 @@ class Dasbor extends MY_Controller {
     }    
 
     public function events() {
-     $data['admin'] = $this->m_event->get_all_events();
+       $data['admin'] = $this->m_event->get_all_events();
 
-     $this->load->view('admin-list-event',$data);
- }
+       $this->load->view('admin-list-event',$data);
+   }
 
- public function make_admin() {
+   public function make_admin() {
     $email=$this->input->post('email');
     $this->user->make_admin($email);
     redirect('dasbor/pengguna');
@@ -311,8 +311,6 @@ public function added_galery() {
 
     $this->load->model('M_Galery');
 
-
-
     //upload
     $config = array(
         'upload_path' => "./uploads/",
@@ -338,7 +336,7 @@ public function added_galery() {
     $upload_data = $this->upload->data();
     $slide = $this->input->post('slideshow'); 
     echo("<pre>");
-    var_dump($slide);
+    //var_dump($slide);
     echo("</pre>");
 
     //check slideshow checkbox
@@ -353,10 +351,166 @@ public function added_galery() {
       'url' => $this->input->post('url'),
       'slideshow' =>$s
 
-    );
+  );
 
     $this->M_Galery->insert($row);
 
 
+}
+
+public function album() {
+
+    $this->load->model('M_Album');
+    $this->load->model('M_Photo');
+    //get current album
+    $album = $this->uri->segment(3);
+    if(isset($album)) { //if album set
+        $data['admin'] = $this->M_Photo->get_photo_by_album($album);
+        $data['admin']['album'] = $album;
+        $this->load->view('admin-list-single-album',$data);
+    } else {
+        $data['admin'] = $this->M_Album->get_all_album();
+        $this->load->view('admin-list-album',$data);
+    }
+
+    
+}
+
+public function add_album() {
+    $this->data['admin'] = "";
+    $this->load->view('admin-add-album',$this->data);
+
+}
+
+public function added_album() {
+    $this->load->model('M_Album');
+    $data = array(
+
+      'title' => $this->input->post('title'),
+      'content' => $this->input->post('content'),
+
+
+  );
+    //update to db
+    $this->M_Album->insert($data);
+
+        //load view
+    redirect('dasbor/album'); 
+
+}
+
+public function add_photo() {
+    $this->data['admin'] = $this->uri->segment(3);
+    
+    $this->load->view('admin-add-photo',$this->data);
+}
+
+public function added_photo() {
+    $this->load->model('M_Photo');
+
+    //upload
+    $config = array(
+        'upload_path' => "./uploads/",
+        'allowed_types' => "gif|jpg|png|jpeg",
+        'overwrite' => TRUE,
+            'max_size' => "2048000", // Can be set to particular file size , here it is 2 MB(2048 Kb)
+            'max_height' => "1500",
+            'max_width' => "1500"
+        );
+    $this->load->library('upload', $config);
+    if($this->upload->do_upload())
+    {
+        $data = array('upload_data' => $this->upload->data());
+        $this->load->view('upload_success',$data);
+    }
+    else
+    {
+        $error = array('error' => $this->upload->display_errors());
+        $this->load->view('custom_view', $error);
+    }     
+
+    //get upload data
+    $upload_data = $this->upload->data();
+    $url = $this->input->post('url'); 
+    //echo("<pre>");
+    //var_dump($slide);
+    //echo("</pre>");
+
+    //check slideshow checkbox
+    if(!isset($url)) {
+        $url = NULL;
+    }
+    //var_dump($this->uri->segment(3));
+
+    //save to db
+    $album = $this->uri->segment(3);
+    $row = array(
+
+      'file_name' => $upload_data['file_name'],
+      'album' => $album,
+      'content' => $this->input->post('content'),
+      'url' => $this->input->post('url'),
+      
+
+  );
+
+    $this->M_Photo->insert($row);
+    redirect("dasbor/album/$album");
+
+}
+
+function delete_photo() {
+    $this->load->helper('file');
+    $this->load->model('M_Photo');
+
+    $id = $this->uri->segment(4);
+    $album = $this->uri->segment(3);
+
+    //hapus foto
+    $file_name = $this->M_Photo->get_file_name($id);
+    
+    //hapus foto di disk
+    unlink("./uploads/$file_name");
+    //hapus foto di db
+    $this->M_Photo->delete($id);
+
+
+    //redirect
+    redirect("dasbor/album/$album");
+
+}
+
+function set_slideshow() {
+    $data['admin']['id'] = $this->uri->segment(4);
+    $data['admin']['album'] = $this->uri->segment(3);
+    $this->load->view("admin-set-photo-url",$data);
+
+}
+
+function setted_slideshow() {
+    $id = $this->uri->segment(4);
+    $album = $this->uri->segment(3);
+    $this->load->model('M_Photo');
+    var_dump($this->input->post('url'));
+    $data = array(
+        'url' => $this->input->post('url')
+    );
+    $this->M_Photo->update($data,$id);
+    redirect("dasbor/album/$album");
+}
+
+function disable_slideshow() {
+    $this->load->model('M_Photo');
+    $data['admin']['id'] = $this->uri->segment(4);
+    $data['admin']['album'] = $this->uri->segment(3);
+    $album = $data['admin']['album'];
+    $id = $data['admin']['id'];
+
+    $data = array(
+        'url' => ''
+    );
+    $this->M_Photo->update($data, $id);
+    redirect("dasbor/album/$album");
+    
 }
 }

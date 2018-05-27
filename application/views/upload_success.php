@@ -5,6 +5,7 @@
 <body>
 <h3>Congragulation You Have Successfuly Uploaded</h3>
 <!-- Uploaded file specification will show up here -->
+<script>alert("Foto telah berhasil ditambahkan ke album")</script>
 <ul>
     <?php foreach ($upload_data as $item => $value):?>
     <li><?php echo $item;?>: <?php echo $value;?></li>
