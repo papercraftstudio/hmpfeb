@@ -9,7 +9,7 @@
       <i class="fa fa-table"></i> Album <?= $admin['album'] ?>
     </div>
     <div class="card-body">
-
+      <a href="<?= base_url('dasbor/album') ?>" class="btn_1 gray">Kembali</a>
       <a href="<?= base_url("dasbor/add_photo/") ?><?= "/" . $admin['album'] ?>" class="btn_1">+ Tambah Foto</a>
       <div class="table-responsive">
         <table class="table table-bordered" id="users" width="100%" cellspacing="0">

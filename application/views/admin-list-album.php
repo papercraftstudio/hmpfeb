@@ -8,6 +8,7 @@
       <i class="fa fa-table"></i> Daftar Album 
   </div>
       <div class="card-body">
+      
       <a href="<?= base_url('dasbor/add_album') ?>" class="btn_1">+ Add Album</a>
         <div class="table-responsive">
           <table class="table table-bordered" id="users" width="100%" cellspacing="0">
