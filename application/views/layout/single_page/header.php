@@ -11,7 +11,6 @@
                         <img style="float:left" src="<?php echo base_url() ?>asset/landing/img/logo.png" alt="" height="50">
                         <div style="position:relative; font-size:35px; top:1px; float:left;">&nbsp; HMP FEB </div>
                     </a>
-                    </a>
                 </div>
             </div>
             <nav class="col-lg-7 col-6">
@@ -33,18 +32,31 @@
                     <ul>
                         <li><a href="<?php echo base_url() ?>" class="show-submenu"> Beranda</a></li>
                         <li><a href="<?php echo base_url('galeri') ?>"> Galeri</a></li>
-                        <li><a href="<?php echo base_url('galeri') ?>"> Kajian</a></li>
-                        <li><span><a href="#0" class="custom-dropdown">Events</a></span>
+                        <li><a href="<?php echo base_url('kajian/all') ?>"> Kajian</a></li>
+                        <li><span><a class="custom-dropdown">Events</a></span>
                             <ul> 
                                 <?php foreach($events as $event): ?>
-                                <li><a href="event/?id=<?= $event->id ?>"><?= $event->title ?></a></li>
+                                    <li><a href="event/?id=<?= $event->id ?>"><?= $event->title ?></a></li>
                                 <?php endforeach; ?>
                                 
                             </ul>
-
                         </li>
-                        <li><a href="<?php echo base_url('page/about_us') ?>"> About Us</a></li>
-                        <li><a href="<?php echo base_url('page/visi_misi') ?>"> Visi &amp; Misi</a></li>
+                        <li><span><a class="custom-dropdown">Perkuliahan</a></span>
+                            <ul> 
+                                <li><a href="<?php echo base_url('perkuliahan/galir') ?>">Galir</a></li>
+                                <li><a href="<?php echo base_url('perkuliahan/dosen') ?>">Dosen</a></li>
+                                
+                            </ul>
+                        </li>                        
+                        <li><span><a class="custom-dropdown">About Us</a></span>
+                            <ul> 
+                                <li><a href="<?php echo base_url('page/about_us') ?>"> About Us</a></li>
+                                <li><a href="<?php echo base_url('page/visi_misi') ?>"> Visi &amp; Misi</a></li>
+                                <li><a href="<?php echo base_url('page/contact_us') ?>">Contact Us</a></li>
+                            </ul>
+                        </li>
+
+
                     </ul>
                 </div>
             </nav>

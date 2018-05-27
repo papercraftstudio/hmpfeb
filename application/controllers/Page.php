@@ -25,12 +25,21 @@ class Page extends MY_Controller {
    }
 
    function visi_misi() {
-   		$data['guest'] = $this->M_Page->get_page(2);
+      $data['guest'] = $this->M_Page->get_page(2);
 
       //Get event data
       $data['events'] = $this->M_Event->get_all_events();
 
-   		$this->load->view('single-page',$data);
+      $this->load->view('single-page',$data);
+   }
+
+      function contact_us() {
+      $data['guest'] = $this->M_Page->get_page(3);
+
+      //Get event data
+      $data['events'] = $this->M_Event->get_all_events();
+
+      $this->load->view('single-page',$data);
    }
 
    function event() {
