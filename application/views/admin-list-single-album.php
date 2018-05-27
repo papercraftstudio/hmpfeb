@@ -36,7 +36,7 @@
                   </form>
                   
                   <td>
-                    <form action="<?= base_url() ?>dasbor/<?= (empty($photo->url)) ? "set_slideshow" : "disable_slideshow" ?>/<?= $admin['album'] ?>/<?= $photo->id?>" <?= (empty($photo->url)) ?  '' : 'onsubmit="return confirm(\'Apakah Anda yakin ingin supay foto ini tidak ditambilkan di slideshow??\')"'  ?>>
+                    <form action="<?= base_url() ?>dasbor/<?= (empty($photo->url)) ? "set_slideshow" : "disable_slideshow" ?>/<?= $admin['album'] ?>/<?= $photo->id?>" <?= (empty($photo->url)) ?  '' : 'onsubmit="return confirm(\'Apakah Anda yakin ingin supay foto ini tidak ditambilkan di slideshow?\')"'  ?>>
                       <input type="submit" value="<?= (empty($photo->url)) ? "Set Slideshow" : "Disable Slideshow" ?>">
                     </form>
 
