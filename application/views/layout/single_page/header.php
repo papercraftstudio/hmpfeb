@@ -9,7 +9,7 @@
                 <div id="logo">
                     <a href="<?php echo base_url() ?>">
                         <img style="float:left" src="<?php echo base_url() ?>asset/landing/img/logo.png" alt="" height="50">
-                        <div style="position:relative; font-size:35px; top:1px; float:left;">&nbsp; HMP EKONOMI </div>
+                        <div style="position:relative; font-size:35px; top:1px; float:left;">&nbsp; HMP FEB </div>
                     </a>
                     </a>
                 </div>
