@@ -41,6 +41,13 @@
                                 
                             </ul>
                         </li>
+                        <li><span><a class="custom-dropdown">Perkuliahan</a></span>
+                            <ul> 
+                                <li><a href="<?php echo base_url('perkuliahan/galir') ?>">Galir</a></li>
+                                <li><a href="<?php echo base_url('perkuliahan/dosen') ?>">Dosen</a></li>
+                                
+                            </ul>
+                        </li>                        
                         <li><span><a class="custom-dropdown">About Us</a></span>
                             <ul> 
                                 <li><a href="<?php echo base_url('page/about_us') ?>"> About Us</a></li>
