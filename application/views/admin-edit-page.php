@@ -26,6 +26,7 @@
   </div>
   <div class="card-body">
     <div class="table-responsive">
+    
     <?php
 
     echo form_open('dasbor/editted_page'); ?>
@@ -61,14 +62,10 @@
     );
     echo form_textarea($data);
 
-    
-    //Show preview button
-    $data = array(
-      'type' => 'submit',
-      'name' => 'preview',
-      'value' => 'Preview'
-    );
-    echo form_submit($data);
+
+    //back btn
+    echo("<a href='" . base_url('dasbor/page') . "' class='btn_1 gray'>Kembali</a>");
+
     //Show submit button
     $data = array(
       'type' => 'submit',
