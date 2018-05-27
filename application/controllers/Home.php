@@ -10,6 +10,7 @@ class Home extends MY_Controller {
             parent::MIDDLEWARE['USER'],
             parent::MIDDLEWARE['ADMIN']
         ]);
+        $this->load->model('m_photo');
         $this->load->model('m_event');
     }
 
@@ -37,7 +38,10 @@ class Home extends MY_Controller {
         }
         //Get event data
         $data['events'] = $this->m_event->get_all_events();
+        
 
+        $data['guest'] = $this->m_photo->select_banner();
+        
         $this->load->view('home',$data);
     }
 }

@@ -50,7 +50,10 @@ class M_Photo extends CI_Model {
     $this->db->insert('m_photo',$data);
   }
 
-
+  function select_banner() {
+    $query=$this -> db -> get_where('m_photo', array('url !=' => ''));
+    return($query->result());
+  }
 
 
 }

@@ -20,3 +20,20 @@
 <script src="<?php echo base_url() . $dir ?>jquery.min.js"></script>
 <script src="<?php echo base_url() . $dir ?>script.min.js"></script>
 <script src="<?php echo base_url() . $dir ?>function.js"></script>
+
+  <!-- <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script> -->
+        <script src="<?= base_url();?>asset/Slider/jquery.slides.js"></script>
+        <script>
+            $(function () {
+                $('#slides').slidesjs({
+                    pagination: false,
+                    generatePagination: false,
+                    width: 950,
+                    height: 400
+                });
+            });
+            $(function(){
+                $('a.slidesjs-previous').html('<i style="font-size:50px; margin-right:5px" class="fa fa-arrow-circle-left"></i>');
+                $('a.slidesjs-next').html('<i style="font-size:50px; margin-left:5px;" class="fa fa-arrow-circle-right"></i>');
+            });
+        </script>
