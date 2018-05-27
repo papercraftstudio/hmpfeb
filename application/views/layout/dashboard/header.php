@@ -33,6 +33,12 @@
             <li><a href="<?php echo base_url('dasbor/pengguna') ?>">Pengguna</a></li>
         </ul>
     </li>
+     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+        <a class="nav-link" href="<?php echo base_url('dasbor/dosen') ?>">
+            <i class="fa fa-fw fa-dashboard"></i>
+            <span class="nav-link-text">Dosen</span>
+        </a>
+    </li>
     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
         <a class="nav-link" href="<?php echo base_url('dasbor/page') ?>">
             <i class="fa fa-fw fa-dashboard"></i>
@@ -56,7 +62,7 @@
     </li>
 
     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-        <a class="nav-link" href="<?php echo base_url('dasbor/galery') ?>">
+        <a class="nav-link" href="<?php echo base_url('dasbor/album') ?>">
             <i class="fa fa-fw fa-dashboard"></i>
             <span class="nav-link-text">Galery</span>
         </a>
