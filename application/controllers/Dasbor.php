@@ -399,6 +399,13 @@ public function added_album() {
 
 }
 
+public function delete_album() {
+    $id = $this->uri->segment('3');
+    $this->load->model('M_Album');
+    $this->M_Album->delete($id);
+    redirect('dasbor/album');
+}
+
 public function add_photo() {
     $this->data['admin'] = $this->uri->segment(3);
     

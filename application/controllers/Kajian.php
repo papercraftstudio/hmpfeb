@@ -27,8 +27,9 @@ class Kajian extends MY_Controller {
 
    function all() {
     $this->load->library("pagination");
+    $this->load->model('M_Event');
     //Get event data
-      $data['events'] = $this->M_Kajian->get_all_kajian();
+      $data['events'] = $this->M_Event->get_all_events();
     
     //pagin config
     $data["base_url"] = "http://economics-uksw.co.id/kajian/all/index";

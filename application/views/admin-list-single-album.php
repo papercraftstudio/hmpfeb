@@ -9,7 +9,7 @@
       <i class="fa fa-table"></i> Album <?= $admin['album'] ?>
     </div>
     <div class="card-body">
-
+      <a href="<?= base_url('dasbor/album') ?>" class="btn_1 gray">Kembali</a>
       <a href="<?= base_url("dasbor/add_photo/") ?><?= "/" . $admin['album'] ?>" class="btn_1">+ Tambah Foto</a>
       <div class="table-responsive">
         <table class="table table-bordered" id="users" width="100%" cellspacing="0">
@@ -36,7 +36,7 @@
                   </form>
                   
                   <td>
-                    <form action="<?= base_url() ?>dasbor/<?= (empty($photo->url)) ? "set_slideshow" : "disable_slideshow" ?>/<?= $admin['album'] ?>/<?= $photo->id?>" <?= (empty($photo->url)) ?  '' : 'onsubmit="return confirm(\'Apakah Anda yakin ingin supay foto ini tidak ditambilkan di slideshow??\')"'  ?>>
+                    <form action="<?= base_url() ?>dasbor/<?= (empty($photo->url)) ? "set_slideshow" : "disable_slideshow" ?>/<?= $admin['album'] ?>/<?= $photo->id?>" <?= (empty($photo->url)) ?  '' : 'onsubmit="return confirm(\'Apakah Anda yakin ingin supay foto ini tidak ditambilkan di slideshow?\')"'  ?>>
                       <input type="submit" value="<?= (empty($photo->url)) ? "Set Slideshow" : "Disable Slideshow" ?>">
                     </form>
 
