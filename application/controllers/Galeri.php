@@ -13,10 +13,10 @@ class Galeri extends MY_Controller {
     }
 
     public function index() {
-        $this->load->model('M_Event');
+        $this->load->model('M_Album');
 
         //Get event data
-        $data['events'] = $this->M_Event->get_all_events();
+        $data['guest'] = $this->M_Album->get_all_album();
 
         $this->load->view('galeri',$data);
     }

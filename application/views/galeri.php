@@ -1,21 +1,24 @@
+<?php $GLOBALS['guest'] = $guest ?>
 <?php function main() { ?>
+<?php $guest = $GLOBALS['guest'] ?>
     <div class="container margin_60_35">
         <div class="row">
             <div class="col-lg-12">
                 <div class="row">
-                    <?php for ($i = 1; $i <= 6; $i++) { ?>
-                        <div class="col-md-4">
-                            <div class="box_list wow fadeIn">
-                                <figure>
-                                    <a href="">
-                                        <img src="" class="img-fluid" alt="">
-                                        <div class="preview"><span>Lihat Album</span></div>
-                                    </a>
-                                </figure>
-                            </div>
+                    <?php foreach($guest as $album): ?>
+                    <div class="col-md-4">
+                        <div class="box_list wow fadeIn">
+                            <figure>
+                                <a href="<?= base_url('') ?>galeri/<?= $album->title ?>">
+                                    <img src="" class="img-fluid" alt="">
+                                    <div class="preview"><p><?= $album->title ?></p><span>Lihat Album</span></div>
+                                </a>
+                            </figure>
                         </div>
-                    <?php } ?>
+                    </div>
+                <?php endforeach; ?>
                 </div>
+
             </div>
         </div>
     </div>
