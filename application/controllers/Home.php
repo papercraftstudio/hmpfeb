@@ -10,8 +10,8 @@ class Home extends MY_Controller {
             parent::MIDDLEWARE['USER'],
             parent::MIDDLEWARE['ADMIN']
         ]);
-        $this->load->model('m_photo');
-        $this->load->model('m_event');
+        $this->load->model('M_Photo');
+        $this->load->model('M_Event');
     }
 
     public function index() {
