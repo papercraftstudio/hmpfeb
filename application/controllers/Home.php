@@ -37,10 +37,10 @@ class Home extends MY_Controller {
             redirect();
         }
         //Get event data
-        $data['events'] = $this->m_event->get_all_events();
+        $data['events'] = $this->M_Event->get_all_events();
         
 
-        $data['guest'] = $this->m_photo->select_banner();
+        $data['guest'] = $this->M_Photo->select_banner();
         
         $this->load->view('home',$data);
     }
