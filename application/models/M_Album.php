@@ -22,6 +22,12 @@ class M_Album extends CI_Model {
     return $page;
   }
 
+  function get_description($album) {
+    $this->db->where('title',$album);
+    $album = $this->db->get('m_album')->row();
+    return $album->content;
+  }
+
   function update($data,$id) {
     $this->db->where('id',$id);
     $this->db->update('m_album',$data);
