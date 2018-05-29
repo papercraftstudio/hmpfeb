@@ -420,9 +420,9 @@ public function added_photo() {
         'upload_path' => "./uploads/",
         'allowed_types' => "gif|jpg|png|jpeg",
         'overwrite' => TRUE,
-            'max_size' => "2048000", // Can be set to particular file size , here it is 2 MB(2048 Kb)
-            'max_height' => "1500",
-            'max_width' => "1500"
+            'max_size' => "20480000", // Can be set to particular file size , here it is 2 MB(2048 Kb)
+            'max_height' => "2000",
+            'max_width' => "2000"
         );
     $this->load->library('upload', $config);
     if($this->upload->do_upload())
