@@ -1,25 +1,48 @@
 <?php
-class Page extends CI_Controller {
-  function __construct() {
-      parent::__construct();
-      $this->load->model('m_page');
-  }
 
-  function index() {
-    $this->load->view('home');
-  }
+defined('BASEPATH') OR exit('No direct script access allowed');
 
-  function about() {
-    $data['title'] = "About";
-    $data['breadcrumb'] = "  <li><a href='#'>Home</a></li>
-      <li><a href='#'>Page</a></li>
-      <li>About</li>";
+class Page extends MY_Controller {
 
-    $data['content'] = $this->m_page->get_page(1);;
-    $this->load->view('single_page_header',$data);
-    // $this->load->view('home');
-    $this->load->view('single_page_footer');
-  }
+  function __construct()
+  {
+    parent::__construct([
+            parent::MIDDLEWARE['GUEST'],
+            parent::MIDDLEWARE['USER'],
+            parent::MIDDLEWARE['ADMIN']
+        ]);
+    	$this->load->model('M_Page');
+      $this->load->model('M_Event');
+   }
 
+   function about_us() {
+   		$this->data['guest'] = $this->M_Page->get_page(1);
 
+      //Get event data
+      $this->data['events'] = $this->M_Event->get_all_events();
+
+   		$this->load->view('single-page',$this->data);
+   }
+
+   function visi_misi() {
+      $data['guest'] = $this->M_Page->get_page(2);
+
+      //Get event data
+      $data['events'] = $this->M_Event->get_all_events();
+
+      $this->load->view('single-page',$data);
+   }
+
+      function contact_us() {
+      $data['guest'] = $this->M_Page->get_page(3);
+
+      //Get event data
+      $data['events'] = $this->M_Event->get_all_events();
+
+      $this->load->view('single-page',$data);
+   }
+
+   function event() {
+      
+   }
 }
