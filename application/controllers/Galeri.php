@@ -39,6 +39,23 @@ class Galeri extends MY_Controller {
         } else {
             //get albums
             $data['guest']['albums'] = $this->M_Album->get_all_album();
+            //get single photo by album
+            //$data['guest']['featured_photo'] = $this->M_Photo->get_featured_photo();
+
+            $album_collection = array();
+            foreach($data['guest']['albums'] as $albums) {
+                array_push($album_collection, $albums->title);
+            }
+
+            //get feature_photos  from album
+            $featured_photos = array();
+            foreach($album_collection as $album) {
+                array_push ($featured_photos,$this->M_Photo->get_featured_photo($album));
+            }
+            
+            $data['guest']['featured_photos'] = $featured_photos;
+            
+
             $this->load->view('galeri',$data);    
         }
 

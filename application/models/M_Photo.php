@@ -55,6 +55,14 @@ class M_Photo extends CI_Model {
     return($query->result());
   }
 
+  function get_featured_photo($album) {
+    $sql = "select * from m_photo where album = '$album'";
+    $query = $this->db->query($sql);
+    $ret = $query->row();
+    // var_dump($ret->file_name);
+    return $ret->file_name;    
+  }
+
 
 }
  ?>
