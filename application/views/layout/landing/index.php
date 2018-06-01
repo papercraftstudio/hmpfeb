@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>SlidesJS Basic Code Example</title>
+    <title>HMP FEB</title>
     <meta name="description" content="SlidesJS is a simple slideshow plugin for jQuery. Packed with a useful set of features to help novice and advanced developers alike create elegant and user-friendly slideshows.">
     <meta name="author" content="Nathan Searles">
     
