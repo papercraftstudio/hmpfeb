@@ -8,11 +8,11 @@ class Dasbor extends MY_Controller {
         parent::__construct([
             parent::MIDDLEWARE['ADMIN']
         ]);
-        $this->load->model('m_page');
-        $this->load->model('m_event');
+        $this->load->model('M_Page');
+        $this->load->model('M_Event');
 
-        $this->load->model('m_kajian');
-        $this->load->model('m_perkuliahan');
+        $this->load->model('M_Kajian');
+        $this->load->model('M_Perkuliahan');
 
         $this->load->helper('form');
     }
