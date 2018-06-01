@@ -51,7 +51,8 @@ class M_Photo extends CI_Model {
   }
 
   function select_banner() {
-    $query=$this -> db -> get_where('m_photo', array('url !=' => ''));
+    $query=$this -> db -> get_where('m_photo', array('type ' => 'slideshow'));
+    // var_dump($query->result());
     return($query->result());
   }
 

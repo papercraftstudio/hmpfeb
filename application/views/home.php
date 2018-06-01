@@ -4,7 +4,7 @@
 <?php $guest = $GLOBALS['guest'] ?>
     <div class="container">
             <center>
-            <div id="slides">
+            <div id="slides" style="position:relative;top: 1.5em">
                 <?php foreach ($guest as $banner) { ?>
                     <img src="<?= base_url(); ?>uploads/<?= $banner->file_name;?>">
                 <?php } ?>

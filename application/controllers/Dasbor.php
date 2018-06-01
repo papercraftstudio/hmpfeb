@@ -421,8 +421,8 @@ public function added_photo() {
         'allowed_types' => "gif|jpg|png|jpeg",
         'overwrite' => TRUE,
             'max_size' => "20480000", // Can be set to particular file size , here it is 2 MB(2048 Kb)
-            'max_height' => "2000",
-            'max_width' => "2000"
+            'max_height' => "3000",
+            'max_width' => "3000"
         );
     $this->load->library('upload', $config);
     if($this->upload->do_upload())
@@ -439,15 +439,7 @@ public function added_photo() {
     //get upload data
     $upload_data = $this->upload->data();
     $url = $this->input->post('url'); 
-    //echo("<pre>");
-    //var_dump($slide);
-    //echo("</pre>");
 
-    //check slideshow checkbox
-    if(!isset($url)) {
-        $url = NULL;
-    }
-    //var_dump($this->uri->segment(3));
 
     //save to db
     $album = $this->uri->segment(3);
@@ -456,11 +448,12 @@ public function added_photo() {
       'file_name' => $upload_data['file_name'],
       'album' => $album,
       'content' => $this->input->post('content'),
-      'url' => $this->input->post('url'),
+      'type' => $this->input->post('type'),
+      'url' => $this->input->post('url')
       
 
   );
-
+    // var_dump($row);
     $this->M_Photo->insert($row);
     redirect("dasbor/album/$album");
 
@@ -488,9 +481,19 @@ function delete_photo() {
 }
 
 function set_slideshow() {
+    $this->load->model('M_Photo');
+
     $data['admin']['id'] = $this->uri->segment(4);
     $data['admin']['album'] = $this->uri->segment(3);
-    $this->load->view("admin-set-photo-url",$data);
+    $album = $data['admin']['album'];
+    $id = $data['admin']['id'];
+    //set to slideshow
+    $data = array(
+        'type' => 'slideshow'
+    );
+    $this->M_Photo->update($data,$id);
+    // $this->load->view("admin-set-photo-url",$data);
+    redirect("dasbor/album/$album");
 
 }
 
@@ -500,7 +503,7 @@ function setted_slideshow() {
     $this->load->model('M_Photo');
     var_dump($this->input->post('url'));
     $data = array(
-        'url' => $this->input->post('url')
+        'type' => 'slideshow'
     );
     $this->M_Photo->update($data,$id);
     redirect("dasbor/album/$album");
@@ -514,7 +517,7 @@ function disable_slideshow() {
     $id = $data['admin']['id'];
 
     $data = array(
-        'url' => ''
+        'type' => 'galery'
     );
     $this->M_Photo->update($data, $id);
     redirect("dasbor/album/$album");

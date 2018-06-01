@@ -29,7 +29,12 @@
                     pagination: false,
                     generatePagination: false,
                     width: 950,
-                    height: 400
+                    height: 400,
+                    play : {
+                        interval : 5000,
+                        auto: true,
+                        pauseOnHover: true
+                    }
                 });
             });
             $(function(){

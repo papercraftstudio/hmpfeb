@@ -10,8 +10,8 @@
     <div class="header_box version_2">
       <h2><i class="fa fa-file"></i>Tambah Foto</h2>
     </div>
-    <div class="card-body">
-      <div class="table-responsive">
+    <div class="col-md-9 lg-9" style="margin:0 auto">
+      <div class="container"> <div class='group'>
         <?php
 
         echo form_open_multipart("dasbor/added_photo/$admin"); ?>
@@ -25,7 +25,8 @@
         $data = array(
 
           'name' => 'id',
-          'hidden' => 'true',
+          'hidden' => 'true'
+
 
         );
         echo form_input($data);
@@ -39,7 +40,7 @@
 
 
     //show upload btn
-    echo "<input type='file' name='userfile' size='20' />";
+    echo "<input type='file' name='userfile' size='20' class='form-control' />";
 
     echo("<br>");
 
@@ -47,29 +48,35 @@
     echo form_label('Deskripsi Foto  ','content'); echo("<br>");
         $data = array(
           'name' => 'content',
+          'class' => 'form-control'
 
         );
         echo form_textarea($data);
 
         echo("</br>");
 
-        //Show checkbox
-        $data = array(
-          'id' => 'slideshow',
+        //Show select option
+        $options = array(
+          'galery' => 'galery',
+          'slideshow' => 'slideshow',
 
         );
-        echo("<label>");echo form_checkbox($data,'slideshow', '0', TRUE);echo("Slideshow ? &nbsp;</label>");
+
+        
+        echo form_dropdown('type', $options, 'galery','class="form-control"'); // 'large' will be "selected"
+        echo("</div");
 
         echo("<br>");
 
     //Show url textbox
 
-        echo("<div class='slideshow' style='display:none'>");echo form_label('URL ke : ','title');
+        echo("<div class='slideshow' style=''>");echo form_label('URL ke : ','title');
         $data = array(
 
           'name' => 'url',
           'type' => 'url',
           'placeholder' => 'Link',
+          'class' => 'form-control'
 
 
         );
@@ -82,24 +89,31 @@
 
 
     //Show cancel button
-        echo anchor('dasbor/album', 'Cancel', 'class="btn_1 gray"');
+        echo("<div class='form-group'></div>");
+        echo anchor('dasbor/album', 'Cancel', 'class="btn_1 gray form-control" style="text-align:center"');
+        echo("</div>");
+
+
+        
 
 
     //Show submit button
+        echo("<div class='form-group'></div>");
         $data = array(
           'type' => 'submit',
           'name' => 'update',
           'value' => 'Insert',
-          'class' => 'btn_1'
+          'class' => 'btn_1 form-control'
         );
         echo form_submit($data);
+        echo("</div>");
 
     //Close form
         echo form_close();
 
 
         ?>
-
+        </div>
 
       </div>
     </div>
@@ -117,12 +131,7 @@
 <script>
   
   $(document).ready(function() {
-    $("#slideshow").change(function() {
 
-      console.log("changed");
-        $('.slideshow').toggle();
-    
-});
   });
 </script>
 
