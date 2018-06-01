@@ -24,6 +24,7 @@ class M_Photo extends CI_Model {
   }
 
   function get_file_name($id) {
+    $this->db->where('id',$id);
     $query = $this->db->get('m_photo');
     $ret = $query->row();
     return $ret->file_name;
@@ -44,6 +45,11 @@ class M_Photo extends CI_Model {
   function delete($id) {
     $this->db->where('id',$id);
     $this->db->delete('m_photo');
+  }
+
+  function delete_by_album($album) {
+    $this->db->where('album',$album);
+    $this->db->delete('m_photo');    
   }
 
   function insert($data) {

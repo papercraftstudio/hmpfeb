@@ -27,7 +27,7 @@
                 <td><a href="<?= base_url("dasbor/album/$album->title") ?>"><?= $album->title ?></a></td>
                 <td><?= strip_tags(substr($album->content,0,50)) ?></td>
                 <td>
-                  <form action="<?= base_url() ?>dasbor/delete_album/<?= $album->id ?>" method="post" onsubmit="return confirm('Anda yakin ingin menghapus album ini?')">
+                  <form action="<?= base_url() ?>dasbor/delete_album/<?= $album->id ?>" method="post" onsubmit="return confirm('Anda yakin ingin menghapus album ini beserta foto-foto didalamnya?')">
                     <input type="submit" value="Hapus">
                   </form>
                 </td>

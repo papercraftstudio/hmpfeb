@@ -400,9 +400,19 @@ public function added_album() {
 }
 
 public function delete_album() {
-    $id = $this->uri->segment('3');
+    
     $this->load->model('M_Album');
+    $this->load->model('M_Photo');
+    $id = $this->uri->segment('3');
+
+    //delete photo by album in db
+    $album = $this->M_Album->get_album_name($id);
+    $this->M_Photo->delete_by_album($album);
+
+    //delete album in db
     $this->M_Album->delete($id);
+
+    // var_dump($album);
     redirect('dasbor/album');
 }
 
@@ -468,6 +478,7 @@ function delete_photo() {
 
     //hapus foto
     $file_name = $this->M_Photo->get_file_name($id);
+    // var_dump($file_name);
     
     //hapus foto di disk
     unlink("./uploads/$file_name");

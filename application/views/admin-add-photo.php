@@ -11,7 +11,11 @@
       <h2><i class="fa fa-file"></i>Tambah Foto</h2>
     </div>
     <div class="col-md-9 lg-9" style="margin:0 auto">
-      <div class="container"> <div class='group'>
+      <div class="container">      <div class="alert alert-warning">
+        <strong>Perhatian!</strong> Tolong upload foto dengan nama file tanpa spasi supaya tidak terjadi error
+      </div>
+       <div class='group'>
+
         <?php
 
         echo form_open_multipart("dasbor/added_photo/$admin"); ?>
@@ -90,7 +94,7 @@
 
     //Show cancel button
         echo("<div class='form-group'></div>");
-        echo anchor('dasbor/album', 'Cancel', 'class="btn_1 gray form-control" style="text-align:center"');
+        echo anchor("dasbor/album/$admin", 'Cancel', 'class="btn_1 gray form-control" style="text-align:center"');
         echo("</div>");
 
 

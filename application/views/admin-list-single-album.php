@@ -9,6 +9,7 @@
       <i class="fa fa-table"></i> Album <?= $admin['album'] ?>
     </div>
     <div class="card-body">
+
       <a href="<?= base_url('dasbor/album') ?>" class="btn_1 gray">Kembali</a>
       <a href="<?= base_url("dasbor/add_photo/") ?><?= "/" . $admin['album'] ?>" class="btn_1">+ Tambah Foto</a>
       <div class="table-responsive">
@@ -17,6 +18,7 @@
             <tr>
 
               <th>Foto</th>
+              
               <th>Deskripsi</th>
               <th>Tipe</th>
               <th>Slideshow</th>
@@ -28,13 +30,14 @@
               <?php if(!isset($photo->id)) break ?>
               <tr>
 
-                <td><img src="<?= base_url("uploads/$photo->file_name") ?>" width="100px" height="100px" alt=""></td>
+                <td><img src="<?= base_url("uploads/$photo->file_name") ?>" width="100px" height="100px" alt=""><p><?= $photo->file_name ?></p></td>
+                
                 <td><?= $photo->content ?></td>
                 <td><?= $photo->type ?></td>
                 <td><?= $photo->url ?></td>
                 <td>
                   <form action="<?= base_url() ?>dasbor/delete_photo/<?= $admin['album'] ?>/<?= $photo->id?>" onsubmit="return confirm('Apakah Anda yakin ingin menghapus foto ini?');">
-                    
+
                     <input type="submit" value="Delete">
                   </form>
                   
